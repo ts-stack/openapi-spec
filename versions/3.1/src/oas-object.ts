@@ -38,7 +38,7 @@ export class OasObject {
    * [1]: https://swagger.io/specification/#serverObject
    * [2]: https://swagger.io/specification/#serverUrl
    */
-  servers?: ServerObject;
+  servers?: ServerObject[];
   /**
    * The available paths and operations for the API.
    */
@@ -65,7 +65,7 @@ export class OasObject {
    * override this definition. To make security optional, an empty security requirement (`{}`)
    * can be included in the array.
    */
-  security?: SecurityRequirementObject;
+  security?: SecurityRequirementObject[];
   /**
    * A list of tags used by the document with additional metadata. The order of the tags can be
    * used to reflect on their order by the parsing tools. Not all tags that are used by the
@@ -74,6 +74,6 @@ export class OasObject {
    * 
    * [1]: https://swagger.io/specification/#operationObject
    */
-  tags?: TagObject;
+  tags?: TagObject[];
   externalDocs?: ExternalDocumentationObject;
 }

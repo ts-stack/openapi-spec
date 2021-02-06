@@ -53,7 +53,7 @@ export class OasObject {
    * 
    * [1]: ../examples/v3.1/webhook-example.yaml
    */
-  webhooks?: { [webhooksName: string]: PathItemObject | ReferenceObject };
+  webhooks?: { [webhookName: string]: PathItemObject | ReferenceObject };
   /**
    * An element to hold various schemas for the document.
    */

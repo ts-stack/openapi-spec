@@ -1,5 +1,5 @@
 {
-  "name": "starter",
+  "name": "@ts-stack/open-api-spec",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index",
@@ -10,10 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^8.2.0"
-  },
+  "license": "MIT",
   "devDependencies": {
     "@types/eslint": "^7.2.6",
     "@types/jest": "^26.0.20",

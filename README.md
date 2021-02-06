@@ -1,6 +1,7 @@
 # About the project
 
 `@ts-stack/open-api-spec` is [OpenAPI Specification][1] writen in TypeScript.
+To use it, required TypeScript v4.1+
 
 ## Introduction
 

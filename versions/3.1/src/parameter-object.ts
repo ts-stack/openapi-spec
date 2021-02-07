@@ -325,5 +325,5 @@ export class ParameterObject {
    * A map containing the representations for the parameter. The key is the media type and
    * the value describes it. The map MUST only contain one entry.
    */
-  content?: { [contentName: string]: MediaTypeObject };
+  content?: { [mediaTypeName: string]: MediaTypeObject };
 }

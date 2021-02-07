@@ -9,4 +9,4 @@ The OpenAPI Specification (OAS) defines a standard, language-agnostic interface 
 
 An OpenAPI definition can then be used by documentation generation tools to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.
 
-[1]: https://swagger.io/specification/
+[1]: https://github.com/OAI/OpenAPI-Specification

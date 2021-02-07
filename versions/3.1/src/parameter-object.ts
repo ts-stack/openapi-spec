@@ -31,6 +31,186 @@ import { OasStyle } from './oas-style';
  * with the `schema` object, the example MUST follow the prescribed serialization strategy for
  * the parameter.
  * 
+ * ### Parameter Object Examples
+ * 
+ * A header parameter with an array of 64 bit integer numbers:
+ * 
+ * - example with JSON
+ * 
+```json
+{
+  "name": "token",
+  "in": "header",
+  "description": "token to be passed as a header",
+  "required": true,
+  "schema": {
+    "type": "array",
+    "items": {
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "style": "simple"
+}
+```
+ * 
+ * - example with YAML
+ * 
+```yaml
+name: token
+in: header
+description: token to be passed as a header
+required: true
+schema:
+  type: array
+  items:
+    type: integer
+    format: int64
+style: simple
+```
+ * 
+ * A path parameter of a string value:
+ * 
+ * - example with JSON
+ * 
+```json
+{
+  "name": "username",
+  "in": "path",
+  "description": "username to fetch",
+  "required": true,
+  "schema": {
+    "type": "string"
+  }
+}
+```
+ * 
+ * - example with YAML
+ * 
+```yaml
+name: username
+in: path
+description: username to fetch
+required: true
+schema:
+  type: string
+```
+ * 
+ * An optional query parameter of a string value, allowing multiple values by repeating the query parameter:
+ * 
+ * - example with JSON
+ * 
+```json
+{
+  "name": "id",
+  "in": "query",
+  "description": "ID of the object to fetch",
+  "required": false,
+  "schema": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    }
+  },
+  "style": "form",
+  "explode": true
+}
+```
+ * 
+ * - example with YAML
+ * 
+```yaml
+name: id
+in: query
+description: ID of the object to fetch
+required: false
+schema:
+  type: array
+  items:
+    type: string
+style: form
+explode: true
+```
+ * 
+ * A free-form query parameter, allowing undefined parameters of a specific type:
+ * 
+ * - example with JSON
+ * 
+```json
+{
+  "in": "query",
+  "name": "freeForm",
+  "schema": {
+    "type": "object",
+    "additionalProperties": {
+      "type": "integer"
+    },
+  },
+  "style": "form"
+}
+```
+ * 
+ * - example with YAML
+ * 
+```yaml
+in: query
+name: freeForm
+schema:
+  type: object
+  additionalProperties:
+    type: integer
+style: form
+```
+ * 
+ * A complex parameter using `content` to define serialization:
+ * 
+ * - example with JSON
+ * 
+```json
+{
+  "in": "query",
+  "name": "coordinates",
+  "content": {
+    "application/json": {
+      "schema": {
+        "type": "object",
+        "required": [
+          "lat",
+          "long"
+        ],
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "long": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
+```
+ * 
+ * - example with YAML
+ * 
+```yaml
+in: query
+name: coordinates
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - lat
+        - long
+      properties:
+        lat:
+          type: number
+        long:
+          type: number
+```
+ * 
  * This object MAY be extended with [Specification Extensions][8].
  * 
  * [1]: https://swagger.io/specification/#parameterName

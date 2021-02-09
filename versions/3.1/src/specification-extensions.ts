@@ -13,7 +13,7 @@ export type SpecificationExtensions = {
    * x-internal-id. The value can be null, a primitive, an array or an object. Can have any valid
    * JSON format value.
    */
-  [P in FieldPattern]: any;
+  [extension: string]: any;
 }
 
 /**

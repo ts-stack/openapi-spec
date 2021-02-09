@@ -419,6 +419,84 @@ components:
  */
 export class SchemaObject {
   /**
+   * The "$ref" keyword is an applicator that is used to reference a
+   * statically identified schema.  Its results are the results of the
+   * referenced schema.  [[CREF9: Note that this definition of how the
+   * results are determined means that other keywords can appear alongside
+   * of "$ref" in the same schema object.  ]]
+   * 
+   * The value of the "$ref" property MUST be a string which is a URI-
+   * Reference.  Resolved against the current URI base, it produces the
+   * URI of the schema to apply.
+   */
+  $ref?: string;
+  /**
+   * The "$recursiveRef" and "$recursiveAnchor" keywords are used to
+   * construct extensible recursive schemas.  A recursive schema is one
+   * that has a reference to its own root, identified by the empty
+   * fragment URI reference ("#").
+   * 
+   * Simply stated, a "$recursiveRef" behaves identically to "$ref",
+   * except when its target schema contains "$recursiveAnchor" with a
+   * value of true.  In that case, the dynamic scope is examined to
+   * determine a new base URI, and the URI-reference in "$recursiveRef" is
+   * re-evaluated against that base URI.  Unlike base URI changes with
+   * "$id", changes with "$recursiveAnchor" are calculated each time a
+   * "$recursiveRef" is resolved, and do not impact any other keywords.
+   * 
+   * For an example using these keyword, see appendix C.  [[CREF10: The
+   * difference between the hyper-schema meta-schema in previous drafts
+   * and an this draft dramatically demonstrates the utility of these
+   * keywords.  ]]
+   */
+  $recursiveRef?: string;
+  /**
+   * The "$recursiveRef" and "$recursiveAnchor" keywords are used to
+   * construct extensible recursive schemas.  A recursive schema is one
+   * that has a reference to its own root, identified by the empty
+   * fragment URI reference ("#").
+   * 
+   * Simply stated, a "$recursiveRef" behaves identically to "$ref",
+   * except when its target schema contains "$recursiveAnchor" with a
+   * value of true.  In that case, the dynamic scope is examined to
+   * determine a new base URI, and the URI-reference in "$recursiveRef" is
+   * re-evaluated against that base URI.  Unlike base URI changes with
+   * "$id", changes with "$recursiveAnchor" are calculated each time a
+   * "$recursiveRef" is resolved, and do not impact any other keywords.
+   * 
+   * For an example using these keyword, see appendix C.  [[CREF10: The
+   * difference between the hyper-schema meta-schema in previous drafts
+   * and an this draft dramatically demonstrates the utility of these
+   * keywords.  ]]
+   */
+  $recursiveAnchor?: string;
+  /**
+   * The "$defs" keyword reserves a location for schema authors to inline
+   * re-usable JSON Schemas into a more general schema.  The keyword does
+   * not directly affect the validation result.
+   * 
+   * This keyword's value MUST be an object.  Each member value of this
+   * object MUST be a valid JSON Schema.
+   * 
+   * As an example, here is a schema describing an array of positive
+   * integers, where the positive integer constraint is a subschema in
+   * "$defs":
+```json
+
+   {
+       "type": "array",
+       "items": { "$ref": "#/$defs/positiveInteger" },
+       "$defs": {
+           "positiveInteger": {
+               "type": "integer",
+               "exclusiveMinimum": 0
+           }
+       }
+   }
+```
+   */
+  $defs?: string;
+  /**
    * The value of this keyword MUST be either a string or an array. If it
    * is an array, elements of the array MUST be strings and MUST be
    * unique.

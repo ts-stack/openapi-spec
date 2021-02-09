@@ -91,7 +91,7 @@ export type PathsObject = {
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
    */
-  [P in FieldPattern]: PathItemObject;
+  [path: string]: PathItemObject;
 };
 
 /**

@@ -19,7 +19,7 @@ export class BaseParameterObject {
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
    */
-  required?: string;
+  required?: boolean;
   /**
    * Specifies that a parameter is deprecated and SHOULD be transitioned out of usage.
    * Default value is `false`.

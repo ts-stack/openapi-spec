@@ -125,7 +125,7 @@ security:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class OperationObject {
   /**
@@ -162,11 +162,11 @@ export class OperationObject {
    * a [name][2] and [location][3]. The list can use the [Reference Object][4] to link to
    * parameters that are defined at the [OpenAPI Object's components/parameters][5].
    * 
-   * [1]: https://swagger.io/specification/#pathItemParameters
-   * [2]: https://swagger.io/specification/#parameterName
-   * [3]: https://swagger.io/specification/#parameterIn
-   * [4]: https://swagger.io/specification/#referenceObject
-   * [5]: https://swagger.io/specification/#componentsParameters
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemParameters
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterName
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
+   * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
+   * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsParameters
    */
   parameters?: (ParameterObject | ReferenceObject)[];
   /**
@@ -190,7 +190,7 @@ export class OperationObject {
    * identifier for the Callback Object. Each value in the map is a [Callback Object][1]
    * that describes a request that may be initiated by the API provider and the expected responses.
    * 
-   * [1]: https://swagger.io/specification/#callbackObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callbackObject
    */
   callbacks?: { [callbackName: string]: CallbackObject | ReferenceObject };
   /**
@@ -206,7 +206,7 @@ export class OperationObject {
    * any declared top-level [`security`][1]. To remove a top-level security declaration,
    * an empty array can be used.
    * 
-   * [1]: https://swagger.io/specification/#oasSecurity
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasSecurity
    */
   security?: SecurityRequirementObject[];
   /**

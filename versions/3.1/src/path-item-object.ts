@@ -99,8 +99,8 @@ parameters:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
- * [2]: https://swagger.io/specification/#securityFiltering
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securityFiltering
  */
 export class PathItemObject {
   /**
@@ -108,7 +108,7 @@ export class PathItemObject {
    * in the format of a [Path Item Object][1]. In case a Path Item Object
    * field appears both in the defined object and the referenced object, the behavior is undefined.
    * 
-   * [1]: https://swagger.io/specification/#pathItemObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemObject
    */
   $ref?: string;
   /**
@@ -166,10 +166,10 @@ export class PathItemObject {
    * [Reference Object][3] to link to parameters that are defined at the
    * [OpenAPI Object's components/parameters][4].
    * 
-   * [1]: https://swagger.io/specification/#parameterName
-   * [2]: https://swagger.io/specification/#parameterIn
-   * [3]: https://swagger.io/specification/#referenceObject
-   * [4]: https://swagger.io/specification/#componentsParameters
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterName
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
+   * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsParameters
    */
   parameters?: (ParameterObject | ReferenceObject)[];
 }

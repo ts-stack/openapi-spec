@@ -3,7 +3,7 @@
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class ServerVariableObject {
   /**
@@ -17,8 +17,8 @@ export class ServerVariableObject {
    * treatment of default values, because in those cases parameter values are optional.
    * If the [`enum`][2] is defined, the value MUST exist in the enum's values.
    * 
-   * [1]: https://swagger.io/specification/#schemaObject
-   * [2]: https://swagger.io/specification/#serverVariableEnum
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverVariableEnum
    */
   default: string;
   /**

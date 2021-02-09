@@ -31,8 +31,8 @@ schema:
   type: integer
 ```
  * 
- * [1]: https://swagger.io/specification/#parameterObject
- * [2]: https://swagger.io/specification/#parameterStyle
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
  */
 export class HeaderObject extends BaseParameterObject {
   /**

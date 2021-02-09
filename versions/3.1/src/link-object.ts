@@ -115,9 +115,9 @@ links:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
- * [2]: https://swagger.io/specification/#runtimeExpression
- * [3]: https://swagger.io/specification/#operationObject
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  */
 export class LinkObject {
   /**
@@ -126,7 +126,7 @@ export class LinkObject {
    * `operationRef` values MAY be used to locate an existing [Operation Object][1]
    * in the OpenAPI definition.
    * 
-   * [1]: https://swagger.io/specification/#operationObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
    */
   operationRef?: string;
   /**
@@ -141,14 +141,14 @@ export class LinkObject {
    * The parameter name can be qualified using the [parameter location][1] `[{in}.]{name}` for
    * operations that use the same parameter name in different locations (e.g. path.id).
    * 
-   * [1]: https://swagger.io/specification/#parameterIn
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
    */
   parameters?: { [parameterName: string]: any };
   /**
    * A literal value or [{expression}][1] to use as a request body when calling the target
    * operation.
    * 
-   * [1]: https://swagger.io/specification/#runtimeExpression
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
    */
   requestBody?: { [parameterName: string]: any };
   /**

@@ -13,7 +13,7 @@ import { TagObject } from './tag-object';
  *
  * This object MAY be extended with [Specification Extensions][1].
    * 
-   * [1]: https://swagger.io/specification/#specificationExtensions
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class OasObject {
   /**
@@ -22,8 +22,8 @@ export class OasObject {
    * clients to interpret the OpenAPI document. This is _not_ related to the API [info.version][3]
    * string.
    * 
-   * [1]: https://swagger.io/specification/#versions
-   * [3]: https://swagger.io/specification/#info-version
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#versions
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#info-version
    */
   openapi: string;
   /**
@@ -35,8 +35,8 @@ export class OasObject {
    * the `servers` property is not provided, or is an empty array, the default value would be
    * a [Server Object][1] with a [url][2] value of `/`.
    * 
-   * [1]: https://swagger.io/specification/#serverObject
-   * [2]: https://swagger.io/specification/#serverUrl
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverUrl
    */
   servers?: ServerObject[];
   /**
@@ -72,7 +72,7 @@ export class OasObject {
    * [Operation Object][1] must be declared. The tags that are not declared MAY
    * be organized randomly or based on the tools' logic. Each tag name in the list MUST be unique.
    * 
-   * [1]: https://swagger.io/specification/#operationObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
    */
   tags?: TagObject[];
   externalDocs?: ExternalDocumentationObject;

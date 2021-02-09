@@ -49,7 +49,7 @@ $ref: Pet.yaml
 $ref: definitions.yaml#/Pet
 ```
  * 
- * [1]: https://swagger.io/specification/#schemaObject
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
  */
 export class ReferenceObject {
   /**

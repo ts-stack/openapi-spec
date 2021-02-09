@@ -207,67 +207,67 @@ components:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class ComponentsObject {
   /**
    * An object to hold reusable [Schema Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#schemaObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
    */
   schemas?: { [schemaName: string]: SchemaObject };
   /**
    * An object to hold reusable [Response Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#responseObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#responseObject
    */
   responses?: { [responseName: string]: ResponseObject | ReferenceObject };
   /**
    * An object to hold reusable [Parameter Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#parameterObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
    */
   parameters?: { [parameterName: string]: ParameterObject | ReferenceObject };
   /**
    * An object to hold reusable [Example Objects](#exampleObject).
    * 
-   * [1]: https://swagger.io/specification/#exampleObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#exampleObject
    */
   examples?: { [exampleName: string]: ExampleObject | ReferenceObject };
   /**
    * An object to hold reusable [Request Body Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#requestBodyObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#requestBodyObject
    */
   requestBodies?: { [requestBodyName: string]: RequestBodyObject | ReferenceObject };
   /**
    * An object to hold reusable [Header Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#headerObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#headerObject
    */
   headers?: { [headerBodyName: string]: HeaderObject | ReferenceObject };
   /**
    * An object to hold reusable [Security Scheme Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#securitySchemeObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securitySchemeObject
    */
   securitySchemes?: { [securitySchemeName: string]: SecuritySchemeObject | ReferenceObject };
   /**
    * An object to hold reusable [Link Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#linkObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#linkObject
    */
   links?: { [linkName: string]: LinkObject | ReferenceObject };
   /**
    * An object to hold reusable [Callback Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#callbackObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callbackObject
    */
   callbacks?: { [callbackName: string]: CallbackObject | ReferenceObject };
   /**
    * An object to hold reusable [Path Item Object][1].
    * 
-   * [1]: https://swagger.io/specification/#pathItemObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemObject
    */
   pathItems?: { [pathItemName: string]: PathItemObject | ReferenceObject };
 }

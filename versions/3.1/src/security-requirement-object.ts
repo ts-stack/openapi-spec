@@ -72,10 +72,10 @@ security:
     - read:pets
 ```
  * 
- * [1]: https://swagger.io/specification/#componentsSecuritySchemes
- * [2]: https://swagger.io/specification/#componentsObject
- * [3]: https://swagger.io/specification/#oasObject
- * [4]: https://swagger.io/specification/#operationObject
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsSecuritySchemes
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsObject
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
+ * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  */
 export class SecurityRequirementObject {
   /**
@@ -86,8 +86,8 @@ export class SecurityRequirementObject {
    * scheme types, the array MAY contain a list of role names which are required for the execution,
    * but are not otherwise defined or exchanged in-band.
    * 
-   * [1]: https://swagger.io/specification/#componentsSecuritySchemes
-   * [2]: https://swagger.io/specification/#componentsObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsSecuritySchemes
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsObject
    */
   [name: string]: string[];
 }

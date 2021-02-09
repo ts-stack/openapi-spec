@@ -209,14 +209,14 @@ content:
  * 
  * This object MAY be extended with [Specification Extensions][8].
  * 
- * [1]: https://swagger.io/specification/#parameterName
- * [2]: https://swagger.io/specification/#parameterIn
- * [3]: https://swagger.io/specification/#pathTemplating
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterName
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
  * [4]: https://tools.ietf.org/html/rfc7230#page-22
- * [5]: https://swagger.io/specification/#parameterSchema
- * [6]: https://swagger.io/specification/#parameterStyle
- * [7]: https://swagger.io/specification/#parameterContent
- * [8]: https://swagger.io/specification/#specificationExtensions
+ * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterSchema
+ * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
+ * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterContent
+ * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class ParameterObject extends BaseParameterObject {
   /**
@@ -229,10 +229,10 @@ export class ParameterObject extends BaseParameterObject {
    * - For all other cases, the `name` corresponds to the parameter name used by the [`in`][1]
    * property.
    * 
-   * [1]: https://swagger.io/specification/#parameterIn
-   * [2]: https://swagger.io/specification/#pathsPath
-   * [3]: https://swagger.io/specification/#pathsObject
-   * [4]: https://swagger.io/specification/#pathTemplating
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathsPath
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathsObject
+   * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
    */
   name: string;
   /**

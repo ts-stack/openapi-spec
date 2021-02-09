@@ -17,7 +17,7 @@ export class BaseParameterObject {
    * is `"path"`, this property is **REQUIRED** and its value MUST be `true`. Otherwise,
    * the property MAY be included and its default value is `false`.
    * 
-   * [1]: https://swagger.io/specification/#parameterIn
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
    */
   required?: string;
   /**
@@ -32,7 +32,7 @@ export class BaseParameterObject {
    * the value of `allowEmptyValue` SHALL be ignored. Use of this property is NOT RECOMMENDED,
    * as it is likely to be removed in a later revision.
    * 
-   * [1]: https://swagger.io/specification/#parameterStyle
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
    */
   allowEmptyValue?: boolean;
   /**
@@ -50,7 +50,7 @@ export class BaseParameterObject {
    * property has no effect. When [`style`][1] is `form`, the default value is
    * `true`. For all other styles, the default value is `false`.
    * 
-   * [1]: https://swagger.io/specification/#parameterStyle
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
    */
   explode?: boolean;
   /**

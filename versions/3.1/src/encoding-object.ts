@@ -46,7 +46,7 @@ requestBody:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class EncodingObject {
   /**
@@ -78,9 +78,9 @@ export class EncodingObject {
    * `multipart/form-data`. If a value is explicitly defined, then the value of [`contentType`][3]
    * (implicit or explicit) SHALL be ignored.
    * 
-   * [1]: https://swagger.io/specification/#parameterObject
-   * [2]: https://swagger.io/specification/#parameterStyle
-   * [3]: https://swagger.io/specification/#encodingContentType
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingContentType
    */
   style?: OasStyle;
   /**
@@ -92,8 +92,8 @@ export class EncodingObject {
    * If a value is explicitly defined, then the value of [`contentType`][2] (implicit or explicit)
    * SHALL be ignored.
    * 
-   * [1]: https://swagger.io/specification/#encodingStyle
-   * [2]: https://swagger.io/specification/#encodingContentType
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingStyle
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingContentType
    */
   explode?: boolean;
   /**
@@ -105,7 +105,7 @@ export class EncodingObject {
    * SHALL be ignored.
    * 
    * [1]: https://tools.ietf.org/html/rfc3986#section-2.2
-   * [2]: https://swagger.io/specification/#encodingContentType
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingContentType
    */
   allowReserved?: boolean;
 }

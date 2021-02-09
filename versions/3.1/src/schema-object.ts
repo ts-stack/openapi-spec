@@ -411,11 +411,11 @@ components:
  * [2]: https://json-schema.org/draft/2019-09/json-schema-core.html
  * [3]: https://json-schema.org/draft/2019-09/json-schema-validation.html
  * [4]: http://spec.commonmark.org/
- * [5]: https://swagger.io/specification/#dataTypeFormat
- * [6]: https://swagger.io/specification/#discriminatorObject
- * [7]: https://swagger.io/specification/#xmlObject
- * [8]: https://swagger.io/specification/#externalDocumentationObject
- * [9]: https://swagger.io/specification/#schemaXml
+ * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#dataTypeFormat
+ * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#discriminatorObject
+ * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#xmlObject
+ * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#externalDocumentationObject
+ * [9]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaXml
  */
 export class SchemaObject {
   /**
@@ -1127,7 +1127,7 @@ export class SchemaObject {
    * differentiate between other schemas which may satisfy the payload description. See
    * [Composition and Inheritance][1] for more details.
    * 
-   * [1]: https://swagger.io/specification/#schemaComposition
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaComposition
    */
   discriminator?: DiscriminatorObject;
   /**

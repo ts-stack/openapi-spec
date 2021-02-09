@@ -149,7 +149,7 @@ description: object created
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class ResponseObject {
   /**
@@ -178,7 +178,7 @@ export class ResponseObject {
    * a short name for the link, following the naming constraints of the names for
    * [Component Objects][1].
    * 
-   * [1]: https://swagger.io/specification/#componentsObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsObject
    */
   links?: { [linkName: string]: LinkObject | ReferenceObject };
 }

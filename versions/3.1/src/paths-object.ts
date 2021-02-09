@@ -74,9 +74,9 @@ import { PathItemObject } from './path-item-object';
  * 
  * This object MAY be extended with [Specification Extensions][3].
  * 
- * [1]: https://swagger.io/specification/#serverObject
- * [2]: https://swagger.io/specification/#securityFiltering
- * [3]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securityFiltering
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export type PathsObject = {
   /**
@@ -88,8 +88,8 @@ export type PathsObject = {
    * hierarchy but different templated names MUST NOT exist as they are identical. In case of
    * ambiguous matching, it's up to the tooling to decide which one to use.
    * 
-   * [1]: https://swagger.io/specification/#serverObject
-   * [2]: https://swagger.io/specification/#pathTemplating
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
    */
   [P in FieldPattern]: PathItemObject;
 };

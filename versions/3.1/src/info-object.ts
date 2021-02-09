@@ -8,7 +8,7 @@ import { LicenseObject } from './license-object';
  *
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  * 
  * ### Example with JSON
  * 
@@ -80,7 +80,7 @@ export class InfoObject {
    * The version of the OpenAPI document (which is distinct from the
    * [OpenAPI Specification version][1] or the API implementation version).
    * 
-   * [1]: https://swagger.io/specification/#oasVersion
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasVersion
    */
   version: string;
 }

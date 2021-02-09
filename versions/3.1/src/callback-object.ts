@@ -96,10 +96,10 @@ transactionCallback:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
- * [2]: https://swagger.io/specification/#pathItemObject
- * [3]: https://swagger.io/specification/#oasWebhooks
- * [4]: https://swagger.io/specification/#runtimeExpression
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemObject
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasWebhooks
+ * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
  * [5]: https://tools.ietf.org/html/rfc6901
  */
 export class CallbackObject {

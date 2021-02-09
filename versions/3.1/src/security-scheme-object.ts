@@ -96,7 +96,7 @@ flows:
  * [1]: https://tools.ietf.org/html/rfc6749
  * [2]: https://tools.ietf.org/html/draft-ietf-oauth-discovery-06
  * [3]: https://tools.ietf.org/id/draft-ietf-oauth-security-topics
- * [4]: https://swagger.io/specification/#specificationExtensions
+ * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class SecuritySchemeObject {
   /**

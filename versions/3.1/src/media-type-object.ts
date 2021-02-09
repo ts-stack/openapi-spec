@@ -242,12 +242,12 @@ An `encoding` attribute is introduced to give you control over the serialization
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  * [2]: https://tools.ietf.org/html/rfc4648
  * [3]: https://tools.ietf.org/html/rfc2045#section-6.7
- * [4]: https://swagger.io/specification/#encodingObject
+ * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingObject
  * [5]: https://tools.ietf.org/html/rfc1866
- * [6]: https://swagger.io/specification/#encodingStyle
+ * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingStyle
  * [7]: https://tools.ietf.org/html/rfc7578
  */
 export class MediaTypeObject {

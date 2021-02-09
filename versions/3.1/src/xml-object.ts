@@ -362,9 +362,9 @@ animals:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
- * [2]: https://swagger.io/specification/#schemaObject
- * [3]: https://swagger.io/specification/#xmlWrapped
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#xmlWrapped
  */
 export class XmlObject {
   /**
@@ -381,7 +381,7 @@ export class XmlObject {
   /**
    * The prefix to be used for the [name][1].
    * 
-   * [1]: https://swagger.io/specification/#xmlName
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#xmlName
    */
   prefix?: string;
   /**

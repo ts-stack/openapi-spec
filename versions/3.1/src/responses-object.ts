@@ -66,7 +66,7 @@ default:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://swagger.io/specification/#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export type ResponsesObject = HttpStatusCodesObject & {
   /**
@@ -74,8 +74,8 @@ export type ResponsesObject = HttpStatusCodesObject & {
    * Use this field to cover undeclared responses. A [Reference Object][1] can link to a response
    * that the [OpenAPI Object's components/responses][2] section defines.
    * 
-   * [1]: https://swagger.io/specification/#referenceObject
-   * [2]: https://swagger.io/specification/#componentsResponses
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsResponses
    */
   default?: ResponseObject | ReferenceObject;
 };
@@ -92,9 +92,9 @@ export type HttpStatusCodesObject = {
    * a response is defined using an explicit code, the explicit code definition takes precedence
    * over the range definition for that code.
    * 
-   * [1]: https://swagger.io/specification/#httpCodes
-   * [2]: https://swagger.io/specification/#referenceObject
-   * [3]: https://swagger.io/specification/#componentsResponses
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#httpCodes
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsResponses
    */
   [P in HttpStatusCode]?: ResponseObject | ReferenceObject;
 };

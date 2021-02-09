@@ -4,7 +4,12 @@
 To use it, required TypeScript v4.1+.
 
 Major and minor versions of `@ts-stack/open-api-spec` are the same as [OpenAPI Specification][1],
-but the patch version is not the same. Check the patch version here (in the README).
+but the patch version is not the same:
+
+| OpenAPI Specification   | @ts-stack/open-api-spec |
+|-------------------------|-------------------------|
+| v3.1.0-rc.1             | <ul><li>v3.1.0-rc.1</li><li>v3.1.1-rc.1</li><li>v3.1.2-rc.1</li></ul> |
+
 
 ## Introduction
 
@@ -25,3 +30,55 @@ npm i @ts-stack/open-api-spec
 ```
 
 [1]: https://github.com/OAI/OpenAPI-Specification
+
+## SpecificationExtensions Usage
+
+You can extends any of model in this way:
+
+```ts
+import { OasObject, SpecificationExtensions } from '@ts-stack/open-api-spec';
+
+type ExtendedOasObject = OasObject & SpecificationExtensions<'x-one' | 'x-two'>;
+
+const extendedOasObject: ExtendedOasObject = {
+  info: {title: '', version: ''},
+  openapi: '',
+  'x-one': '',
+  'x-two': '',
+};
+```
+
+Same but with an interface to extends properties:
+
+```ts
+import { OasObject, SpecificationExtensions } from '@ts-stack/open-api-spec';
+
+interface ExtendedProperties {
+  'x-one': any,
+  'x-two': any
+}
+
+type ExtendedOasObject = OasObject & SpecificationExtensions<keyof ExtendedProperties>;
+
+const extendedOasObject: ExtendedOasObject = {
+  info: {title: '', version: ''},
+  openapi: '',
+  'x-one': '',
+  'x-two': '',
+};
+```
+
+## PathsObject Usage
+
+```ts
+import { PathsObject } from '@ts-stack/open-api-spec';
+
+type Paths = '/one' | '/two';
+
+type StrictDifinedPaths = PathsObject<Paths>;
+
+const paths: StrictDifinedPaths = {
+  '/one': {},
+  '/two': {},
+};
+```

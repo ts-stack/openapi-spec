@@ -78,7 +78,7 @@ import { PathItemObject } from './path-item-object';
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securityFiltering
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export type PathsObject = {
+export type PathsObject<T extends PathFieldPattern = any> = {
   /**
    * A relative path to an individual endpoint. The field name MUST begin with a forward
    * slash (`/`). The path is **appended** (no relative URL resolution) to the expanded URL
@@ -91,7 +91,7 @@ export type PathsObject = {
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
    */
-  [path: string]: PathItemObject;
+  [P in T]: PathItemObject;
 };
 
 /**
@@ -99,4 +99,4 @@ export type PathsObject = {
  * - https://github.com/microsoft/TypeScript/issues/42192
  * - https://github.com/microsoft/TypeScript/pull/26797
  */
-type FieldPattern = `/${any}`;
+export type PathFieldPattern = `/${any}`;

@@ -43,6 +43,367 @@ Field Name | Type | Description
 <a name="schemaExternalDocs"></a>externalDocs | [External Documentation Object][8] | Additional external documentation for this schema.
 <a name="schemaExample"></a>example | Any | A free-form property to include an example of an instance for this schema. To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary.<br><br>**Deprecated:** The `example` property has been deprecated in favor of the JSON Schema `examples` keyword. Use of `example` is discouraged, and later versions of this specification may remove it.
  * 
+ * ### <a name="schemaComposition"></a>Composition and Inheritance (Polymorphism)
+ * 
+ * The OpenAPI Specification allows combining and extending model definitions using the `allOf`
+ * property of JSON Schema, in effect offering model composition. `allOf` takes an array of object
+ * definitions that are validated *independently* but together compose a single object.
+ * 
+ * While composition offers model extensibility, it does not imply a hierarchy between the models.
+ * To support polymorphism, the OpenAPI Specification adds the `discriminator` field. When used,
+ * the `discriminator` will be the name of the property that decides which schema definition
+ * validates the structure of the model. As such, the `discriminator` field MUST be a required
+ * field. There are two ways to define the value of a discriminator for an inheriting instance.
+ * 
+ * - Use the schema name.
+ * - Override the schema name by overriding the property with a new value. If a new value exists,
+ * this takes precedence over the schema name. As such, inline schema definitions, which do not
+ * have a given id, *cannot* be used in polymorphism.
+ * 
+ * ### XML Modeling
+ * 
+ * The [xml][9] property allows extra definitions when translating the JSON definition to XML.
+ * The [XML Object][7] contains additional information about the available options.
+ * 
+ * ### Picking Schema Vocabularies
+ * 
+ * It is important for tooling to be able to detect what meta-schema any given resource wishes to
+ * be processed with: JSON Schema Core, JSON Schema Validation, OpenAPI Schema Object, or some
+ * custom meta schema.
+ * 
+ * `$schema` MAY be present in any Schema Object, and if present MUST be used to determine which
+ * dialect should be used when processing the schema.
+ * 
+ * When `$schema` is not present, the default the following dialect MUST be assumed:
+ * `$schema: "https://spec.openapis.org/oas/3.1/schema-object"`.
+ * 
+ * ### Schema Object Examples
+ * 
+ * #### Primitive Sample
+ * 
+```json
+{
+  "type": "string",
+  "format": "email"
+}
+```
+
+```yaml
+type: string
+format: email
+```
+
+#### Simple Model
+
+```json
+{
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "$ref": "#/components/schemas/Address"
+    },
+    "age": {
+      "type": "integer",
+      "format": "int32",
+      "minimum": 0
+    }
+  }
+}
+```
+
+```yaml
+type: object
+required:
+- name
+properties:
+  name:
+    type: string
+  address:
+    $ref: '#/components/schemas/Address'
+  age:
+    type: integer
+    format: int32
+    minimum: 0
+```
+
+#### Model with Map/Dictionary Properties
+
+For a simple string to string mapping:
+
+```json
+{
+  "type": "object",
+  "additionalProperties": {
+    "type": "string"
+  }
+}
+```
+
+```yaml
+type: object
+additionalProperties:
+  type: string
+```
+
+For a string to model mapping:
+
+```json
+{
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/ComplexModel"
+  }
+}
+```
+
+```yaml
+type: object
+additionalProperties:
+  $ref: '#/components/schemas/ComplexModel'
+```
+
+#### Model with Example
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "example": {
+    "name": "Puma",
+    "id": 1
+  }
+}
+```
+
+```yaml
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+required:
+- name
+example:
+  name: Puma
+  id: 1
+```
+
+#### Models with Composition
+
+```json
+{
+  "components": {
+    "schemas": {
+      "ErrorModel": {
+        "type": "object",
+        "required": [
+          "message",
+          "code"
+        ],
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "minimum": 100,
+            "maximum": 600
+          }
+        }
+      },
+      "ExtendedErrorModel": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ErrorModel"
+          },
+          {
+            "type": "object",
+            "required": [
+              "rootCause"
+            ],
+            "properties": {
+              "rootCause": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+```yaml
+components:
+  schemas:
+    ErrorModel:
+      type: object
+      required:
+      - message
+      - code
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          minimum: 100
+          maximum: 600
+    ExtendedErrorModel:
+      allOf:
+      - $ref: '#/components/schemas/ErrorModel'
+      - type: object
+        required:
+        - rootCause
+        properties:
+          rootCause:
+            type: string
+```
+
+#### Models with Polymorphism Support
+
+```json
+{
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "petType"
+        },
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "petType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "petType"
+        ]
+      },
+      "Cat": {
+        "description": "A representation of a cat. Note that `Cat` will be used as the discriminator value.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Pet"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "huntingSkill": {
+                "type": "string",
+                "description": "The measured skill for hunting",
+                "default": "lazy",
+                "enum": [
+                  "clueless",
+                  "lazy",
+                  "adventurous",
+                  "aggressive"
+                ]
+              }
+            },
+            "required": [
+              "huntingSkill"
+            ]
+          }
+        ]
+      },
+      "Dog": {
+        "description": "A representation of a dog. Note that `Dog` will be used as the discriminator value.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Pet"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "packSize": {
+                "type": "integer",
+                "format": "int32",
+                "description": "the size of the pack the dog is from",
+                "default": 0,
+                "minimum": 0
+              }
+            },
+            "required": [
+              "packSize"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+```yaml
+components:
+  schemas:
+    Pet:
+      type: object
+      discriminator:
+        propertyName: petType
+      properties:
+        name:
+          type: string
+        petType:
+          type: string
+      required:
+      - name
+      - petType
+    Cat:  ## "Cat" will be used as the discriminator value
+      description: A representation of a cat
+      allOf:
+      - $ref: '#/components/schemas/Pet'
+      - type: object
+        properties:
+          huntingSkill:
+            type: string
+            description: The measured skill for hunting
+            enum:
+            - clueless
+            - lazy
+            - adventurous
+            - aggressive
+        required:
+        - huntingSkill
+    Dog:  ## "Dog" will be used as the discriminator value
+      description: A representation of a dog
+      allOf:
+      - $ref: '#/components/schemas/Pet'
+      - type: object
+        properties:
+          packSize:
+            type: integer
+            format: int32
+            description: the size of the pack the dog is from
+            default: 0
+            minimum: 0
+        required:
+        - packSize
+```
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
@@ -54,6 +415,7 @@ Field Name | Type | Description
  * [6]: https://swagger.io/specification/#discriminatorObject
  * [7]: https://swagger.io/specification/#xmlObject
  * [8]: https://swagger.io/specification/#externalDocumentationObject
+ * [9]: https://swagger.io/specification/#schemaXml
  */
 export class SchemaObject {
   /**

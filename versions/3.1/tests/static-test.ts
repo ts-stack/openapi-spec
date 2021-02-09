@@ -1,7 +1,6 @@
-import { OasObject } from '..';
-import { OAuthFlowsObject } from '..';
+import { OasObject, OAuthFlowsObject} from '..';
 
-const oasObject = {
+const oasObject: OasObject = {
   openapi: '3.0.1',
   info: {
     title: 'Swagger Petstore',
@@ -1039,4 +1038,4 @@ const oasObject = {
       },
     },
   },
-} as OasObject;
+};

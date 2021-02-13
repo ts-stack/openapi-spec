@@ -7,7 +7,7 @@
  * The extensions may or may not be supported by the available tooling, but those may be extended
  * as well to add requested support (if tools are internal or open-sourced).
  */
-export type SpecificationExtensions<T extends SpecExtFieldPattern = any> = {
+export type SpecificationExtension<T extends SpecExtFieldPattern> = {
   /**
    * Allows extensions to the OpenAPI Schema. The field name MUST begin with `x-`, for example,
    * `x-internal-id`. The value can be null, a primitive, an array or an object. Can have any valid

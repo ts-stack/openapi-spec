@@ -31,14 +31,14 @@ npm i @ts-stack/open-api-spec
 
 [1]: https://github.com/OAI/OpenAPI-Specification
 
-## SpecificationExtensions Usage
+## SpecificationExtension Usage
 
 You can extends any of model in this way:
 
 ```ts
-import { OasObject, SpecificationExtensions } from '@ts-stack/open-api-spec';
+import { OasObject, SpecificationExtension } from '@ts-stack/open-api-spec';
 
-type ExtendedOasObject = OasObject & SpecificationExtensions<'x-one' | 'x-two'>;
+type ExtendedOasObject = OasObject & SpecificationExtension<'x-one' | 'x-two'>;
 
 const extendedOasObject: ExtendedOasObject = {
   info: {title: '', version: ''},
@@ -51,14 +51,14 @@ const extendedOasObject: ExtendedOasObject = {
 Same but with an interface to extends properties:
 
 ```ts
-import { OasObject, SpecificationExtensions } from '@ts-stack/open-api-spec';
+import { OasObject, SpecificationExtension } from '@ts-stack/open-api-spec';
 
 interface ExtendedProperties {
   'x-one': any,
   'x-two': any
 }
 
-type ExtendedOasObject = OasObject & SpecificationExtensions<keyof ExtendedProperties>;
+type ExtendedOasObject = OasObject & SpecificationExtension<keyof ExtendedProperties>;
 
 const extendedOasObject: ExtendedOasObject = {
   info: {title: '', version: ''},

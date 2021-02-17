@@ -104,11 +104,13 @@ parameters:
  */
 export class PathItemObject {
   /**
-   * Allows for an external definition of this path item. The referenced structure MUST be
-   * in the format of a [Path Item Object][1]. In case a Path Item Object
+   * Allows for a referenced definition of this path item. The referenced structure MUST be
+   * in the form of a [Path Item Object][1]. In case a Path Item Object
    * field appears both in the defined object and the referenced object, the behavior is undefined.
+   * See the rules for resolving [Relative References][2].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
    */
   $ref?: string;
   /**

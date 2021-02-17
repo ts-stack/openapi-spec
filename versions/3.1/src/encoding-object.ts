@@ -10,7 +10,7 @@ import { ReferenceObject } from './reference-object';
 ```yaml
 requestBody:
   content:
-    multipart/mixed:
+    multipart/form-data:
       schema:
         type: object
         properties:
@@ -27,9 +27,7 @@ requestBody:
             description: metadata in XML format
             type: object
             properties: {}
-          profileImage:
-            type: string
-            contentMediaType: image/jpeg
+          profileImage: {}
       encoding:
         historyMetadata:
           # require XML Content-Type in utf-8 encoding
@@ -50,18 +48,13 @@ requestBody:
  */
 export class EncodingObject {
   /**
-   * The `Content-Type` for encoding a specific property. Default value depends on the property
-   * type:
-   * 
-   * - when `type` is absent and `contentMediaType` is present - the value of
-   * `contentMediaType`;
-   * - when both `type` and `contentMediaType` are absent - `application/octet-stream`;
-   * - for `string` with a `contentEncoding` - `application/octet-string`;
-   * - for other primitive types – `text/plain`; for `object` - `application/json`;
-   * - for `array` – the default is defined based on the inner type.
+   * Content-Type for encoding a specific property. Default value depends on the property type:
+   * - for `object` - `application/json`;
+   * - for `array` – the default is defined based on the inner type;
+   * - for all other cases the default is `application/octet-stream`.
    * 
    * The value can be a specific media type (e.g. `application/json`), a wildcard media type
-   * (e.g. `image/*`), or a comma-separated list of the two types.
+   * (e.g. `image/*`), or a comma-separated list of the two types. 
    */
   contentType?: string;
   /**

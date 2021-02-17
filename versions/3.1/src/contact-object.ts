@@ -29,12 +29,12 @@ export class ContactObject {
    */
   name?: string;
   /**
-   * The URL pointing to the contact information. MUST be in the format of a URL.
+   * The URL pointing to the contact information. This MUST be in the form of a URL.
    */
   url?: string;
   /**
    * The email address of the contact person/organization.
-   * MUST be in the format of an email address.
+   * This MUST be in the form of an email address.
    */
   email?: string;
 }

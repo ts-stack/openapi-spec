@@ -7,7 +7,7 @@ import { OAuthFlowsObject } from './o-auth-flows-object';
  * or as a query parameter), mutual TLS (use of a client certificate), OAuth2's common flows
  * (implicit, password, client credentials and authorization code) as defined in [RFC6749][1], and
  * [OpenID Connect Discovery][2].
- * Please note that currently (2019) the implicit flow is about to be deprecated
+ * Please note that as of 2020, the implicit flow is about to be deprecated by
  * [OAuth 2.0 Security Best Current Practice][3]. Recommended for most use case is Authorization
  * Code Grant flow with PKCE.
  * 
@@ -95,7 +95,7 @@ flows:
  * 
  * [1]: https://tools.ietf.org/html/rfc6749
  * [2]: https://tools.ietf.org/html/draft-ietf-oauth-discovery-06
- * [3]: https://tools.ietf.org/id/draft-ietf-oauth-security-topics
+ * [3]: https://tools.ietf.org/html/draft-ietf-oauth-security-topics
  * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
 export class SecuritySchemeObject {
@@ -109,7 +109,7 @@ export class SecuritySchemeObject {
   /**
    * Applies To any.
    *
-   * A short description for security scheme. [CommonMark syntax][1] MAY be used for rich text
+   * A description for security scheme. [CommonMark syntax][1] MAY be used for rich text
    * representation.
    * 
    * [1]: https://spec.commonmark.org/

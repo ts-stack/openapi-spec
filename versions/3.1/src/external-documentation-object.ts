@@ -23,14 +23,14 @@ url: https://example.com
  */
 export class ExternalDocumentationObject {
   /**
-   * A short description of the target documentation.
+   * A description of the target documentation.
    * [CommonMark syntax][1] MAY be used for rich text representation.
    * 
    * [1]: https://spec.commonmark.org/
    */
   description?: string;
   /**
-   * The URL for the target documentation. Value MUST be in the format of a URL.
+   * The URL for the target documentation. This MUST be in the form of a URL.
    */
   url: string;
 }

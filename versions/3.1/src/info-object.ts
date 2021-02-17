@@ -58,14 +58,14 @@ export class InfoObject {
    */
   summary?: string;
   /**
-   * A short description of the API. [CommonMark syntax][1] MAY be used for rich text
+   * A description of the API. [CommonMark syntax][1] MAY be used for rich text
    * representation.
    *
    * [1]: https://spec.commonmark.org/
    */
   description?: string;
   /**
-   * A URL to the Terms of Service for the API. MUST be in the format of a URL.
+   * A URL to the Terms of Service for the API. This MUST be in the form of a URL.
    */
   termsOfService?: string;
   /**

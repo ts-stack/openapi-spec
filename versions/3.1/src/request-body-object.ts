@@ -72,12 +72,12 @@ content:
       $ref: '#/components/schemas/User'
     examples:
       user:
-        summary: User Example in XML
+        summary: User example in XML
         externalValue: 'https://foo.bar/examples/user-example.xml'
   'text/plain':
     examples:
       user:
-        summary: User example in text plain format
+        summary: User example in Plain text
         externalValue: 'https://foo.bar/examples/user-example.txt'
   '* /*':
     examples:
@@ -93,6 +93,7 @@ content:
 ```json
 {
   "description": "user to add to the system",
+  "required": true,
   "content": {
     "text/plain": {
       "schema": {

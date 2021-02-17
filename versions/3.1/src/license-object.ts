@@ -34,7 +34,7 @@ export class LicenseObject {
    */
   identifier?: string;
   /**
-   * A URL to the license used for the API. MUST be in the format of a URL.
+   * A URL to the license used for the API. This MUST be in the form of a URL.
    * The `url` field is mutually exclusive of the `identifier` field.
    */
   url?: string;

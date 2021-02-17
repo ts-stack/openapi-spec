@@ -136,7 +136,7 @@ components:
 }
 ```
  * 
- * will map to `Dog` because of the definition in the `mappings` element.
+ * will map to `Dog` because of the definition in the `mapping` element.
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 

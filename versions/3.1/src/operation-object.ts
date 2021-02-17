@@ -97,6 +97,7 @@ requestBody:
   content:
     'application/x-www-form-urlencoded':
       schema:
+       type: object
        properties:
           name: 
             description: Updated name of the pet

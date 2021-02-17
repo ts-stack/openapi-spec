@@ -10,8 +10,10 @@
 export type SpecificationExtension<T extends SpecExtFieldPattern> = {
   /**
    * Allows extensions to the OpenAPI Schema. The field name MUST begin with `x-`, for example,
-   * `x-internal-id`. The value can be null, a primitive, an array or an object. Can have any valid
-   * JSON format value.
+   * `x-internal-id`. Field names beginning `x-oai-` and `x-oas-` are reserved for uses defined by
+   * the [OpenAPI Initiative][1]. The value can be `null`, a primitive, an array or an object.
+   * 
+   * [1]: https://www.openapis.org/
    */
   [P in T]: any;
 }

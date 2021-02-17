@@ -7,32 +7,36 @@ export type SchemaObjectType = 'null' | 'boolean' | 'object' | 'array' | 'number
 /**
  * The Schema Object allows the definition of input and output data types. These types can be
  * objects, but also primitives and arrays. This object is a superset of the
- * [JSON Schema Specification Draft 2019-09][1].
+ * [JSON Schema Specification Draft 2020-12][1].
  * 
- * For more information about the properties, see [JSON Schema Core][2] and
+ * For more information about the properties, see [JSON Schema Core][1] and
  * [JSON Schema Validation][3].
  * 
- * Unless stated otherwise, the property definitions follow the JSON Schema.
+ * Unless stated otherwise, the property definitions follow those of JSON Schema and do not add any
+ * additional semantics. Where JSON Schema indicates that behavior is defined by the application
+ * (e.g. for annotations), OAS also defers the definition of semantics to the application consuming
+ * the OpenAPI document.
  * 
  * ### Properties
  * 
- * The OpenAPI Schema Object is a JSON Schema vocabulary which extends JSON Schema Core and
- * Validation vocabularies. As such any keyword available for those vocabularies is by definition
- * available in OpenAPI, and will work the exact same way.
+ * The OpenAPI Schema Object [dialect][2] is defined as requiring the [OAS base vocabulary][10],
+ * in addition to the vocabularies as specified in the JSON Schema draft 2020-12
+ * [general purposemeta-schema][11].
  * 
- * The following properties are taken from the JSON Schema definition but their definitions were
- * adjusted to the OpenAPI Specification.
+ * The OpenAPI Schema Object dialect for this version of the specification is identified by the URI
+ * `https://spec.openapis.org/oas/3.1/dialect/base` (the "OAS dialect schema id").
  * 
- * - description - [CommonMark syntax][4] MAY be used for rich text
- * representation.
+ * The following properties are taken from the JSON Schema specification but their definitions have
+ * been extended by the OAS:
+ * 
+ * - description - [CommonMark syntax][4] MAY be used for rich text representation.
  * - format - See [Data Type Formats][5] for further details. While relying on JSON Schema's
  * defined formats, the OAS offers a few additional predefined formats.
  * 
- * In addition to the JSON Schema properties defined in the vocabularies defined in the JSON Schema
- * Core and JSON Schema Validation specifications, any properties can be used from any
- * vocabularies, or entirely arbitrary keywords. The OpenAPI Specification defines an additional
- * vocabulary of keywords which MAY be used along with the JSON Schema vocabulary keywords for
- * further schema description:
+ * In addition to the JSON Schema properties comprising the OAS dialect, the Schema Object supports
+ * keywords from any other vocabularies, or entirely arbitrary properties.
+ * 
+ * The OpenAPI Specification's base vocabulary is comprised of the following keywords:
  * 
  * ### Fixed Fields
  * 
@@ -65,17 +69,27 @@ Field Name | Type | Description
  * The [xml][9] property allows extra definitions when translating the JSON definition to XML.
  * The [XML Object][7] contains additional information about the available options.
  * 
- * ### Picking Schema Vocabularies
+ * ### Specifying Schema Dialects
  * 
- * It is important for tooling to be able to detect what meta-schema any given resource wishes to
- * be processed with: JSON Schema Core, JSON Schema Validation, OpenAPI Schema Object, or some
- * custom meta schema.
+ * It is important for tooling to be able to determine which dialect or meta-schema any given
+ * resource wishes to be processed with: JSON Schema Core, JSON Schema Validation, OpenAPI Schema
+ * dialect, or some custom meta-schema.
  * 
- * `$schema` MAY be present in any Schema Object, and if present MUST be used to determine which
- * dialect should be used when processing the schema.
+ * The `$schema` keyword MAY be present in any root Schema Object, and if present MUST be used to
+ * determine which dialect should be used when processing the schema. This allows use of Schema
+ * Objects which comply with other drafts of JSON Schema than the default Draft 2020-12 support.
+ * Tooling MUST support the <a href="#dialectSchemaId">OAS dialect schema id</a>, and MAY support
+ * additional values of `$schema`.
  * 
- * When `$schema` is not present, the default the following dialect MUST be assumed:
- * `$schema: "https://spec.openapis.org/oas/3.1/schema-object"`.
+ * To allow use of a different default `$schema` value for all Schema Objects contained within an
+ * OAS document, a `jsonSchemaDialect` value may be set within the
+ * [OpenAPI Object][12]. If this default is not set, then the OAS dialect schema id MUST be used
+ * for these Schema Objects. The value of `$schema` within a Schema Object always overrides any
+ * default.
+ * 
+ * When a Schema Object is referenced from an external resource which is not an OAS document
+ * (e.g. a bare JSON Schema resource), then the value of the `$schema` keyword for schemas within
+ * that resource MUST follow [JSON Schema rules][13].
  * 
  * ### Schema Object Examples
  * 
@@ -405,17 +419,22 @@ components:
         - packSize
 ```
  * 
- * This object MAY be extended with [Specification Extensions][1].
+ * This object MAY be extended with [Specification Extensions][1], though as noted, additional
+ * properties MAY omit the `x-` prefix within this object.
  * 
- * [1]: http://json-schema.org/
- * [2]: https://json-schema.org/draft/2019-09/json-schema-core.html
- * [3]: https://json-schema.org/draft/2019-09/json-schema-validation.html
- * [4]: http://spec.commonmark.org/
+ * [1]: https://tools.ietf.org/html/draft-bhutton-json-schema-00
+ * [2]: https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-4.3.3
+ * [3]: https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00
+ * [4]: https://spec.commonmark.org/
  * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#dataTypeFormat
  * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#discriminatorObject
  * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#xmlObject
  * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#externalDocumentationObject
  * [9]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaXml
+ * [10]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#baseVocabulary
+ * [11]: https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-8
+ * [12]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
+ * [13]: https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-8.1.1
  */
 export class SchemaObject {
   /**

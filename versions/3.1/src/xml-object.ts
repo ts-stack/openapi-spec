@@ -375,7 +375,7 @@ export class XmlObject {
    */
   name?: string;
   /**
-   * The URI of the namespace definition. Value MUST be in the form of an absolute URI.
+   * The URI of the namespace definition. This MUST be in the form of an absolute URI.
    */
   namespace?: string;
   /**

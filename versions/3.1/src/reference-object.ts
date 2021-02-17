@@ -1,8 +1,11 @@
 /**
- * A simple object to allow referencing other objects in the OpenAPI document, internally and
- * externally. Targets of a reference do not need to be contained in a components section and
- * for external references, targets MAY exist within any compatible resource. Targets are subject
- * to the same constraints as inline objects.
+ * A simple object to allow referencing other components in the OpenAPI document, internally and
+ * externally.
+ * 
+ * The `$ref` string value contains a URI [RFC3986][2], which identifies the location of the value
+ * being referenced.
+ * 
+ * See the rules for resolving [Relative References][3].
  * 
  * This object cannot be extended with additional properties and any properties added SHALL be
  * ignored.
@@ -50,21 +53,23 @@ $ref: definitions.yaml#/Pet
 ```
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
+ * [2]: https://tools.ietf.org/html/rfc3986
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
  */
 export class ReferenceObject {
   /**
-   * The reference string.
+   * The reference identifier. This MUST be in the form of a URI.
    */
   $ref: string;
   /**
    * A short summary which by default SHOULD override that of the referenced component. If the
-   * referenced object-type does not define a `summary` field, then this field has no effect.
+   * referenced object-type does not allow a `summary` field, then this field has no effect.
    */
   summary?: string;
   /**
    * A description which by default SHOULD override that of the referenced component.
    * [CommonMark syntax][1] MAY be used for rich text representation. If the referenced object-type
-   * does not define a `description` field, then this field has no effect.
+   * does not allow a `description` field, then this field has no effect.
    * 
    * [1]: https://spec.commonmark.org/
    */

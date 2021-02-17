@@ -124,9 +124,10 @@ export class LinkObject {
    * A relative or absolute URI reference to an OAS operation. This field is mutually exclusive of
    * the `operationId` field, and MUST point to an [Operation Object][1]. Relative
    * `operationRef` values MAY be used to locate an existing [Operation Object][1]
-   * in the OpenAPI definition.
+   * in the OpenAPI definition. See the rules for resolving [Relative References][2].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
    */
   operationRef?: string;
   /**

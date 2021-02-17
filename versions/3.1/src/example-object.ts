@@ -83,9 +83,11 @@ export class ExampleObject {
    */
   value?: any;
   /**
-   * A URL that points to the literal example. This provides the capability to reference examples
+   * A URI that points to the literal example. This provides the capability to reference examples
    * that cannot easily be included in JSON or YAML documents.  The `value` field and
-   * `externalValue` field are mutually exclusive. 
+   * `externalValue` field are mutually exclusive. See the rules for resolving [Relative References][1].
+   * 
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
    */
   externalValue?: string;
 }

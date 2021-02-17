@@ -1,6 +1,6 @@
 # About the project
 
-`@ts-stack/open-api-spec` is [OpenAPI Specification][1] v3.1 writen in TypeScript.
+`@ts-stack/open-api-spec` has TypeScript models according to [OpenAPI Specification][1] v3.1.
 To use it, required TypeScript v4.1+.
 
 Major and minor versions of `@ts-stack/open-api-spec` are the same as [OpenAPI Specification][1],
@@ -8,7 +8,8 @@ but the patch version is not the same:
 
 | OpenAPI Specification   | @ts-stack/open-api-spec |
 |-------------------------|-------------------------|
-| v3.1.0-rc.1             | <ul><li>v3.1.0-rc.1</li><li>v3.1.1-rc.1</li><li>v3.1.2-rc.1</li></ul> |
+| v3.1.0-rc.1             | <ul><li>v3.1.0-rc.1</li><li>v3.1.1-rc.1</li><li>v3.1.2-rc.1</li><li>v3.1.3-rc.1</li></ul> |
+| v3.1.0             | <ul><li>v3.1.0</li></ul> |
 
 
 ## Introduction

@@ -153,7 +153,7 @@ description: object created
  */
 export class ResponseObject {
   /**
-   * A short description of the response. [CommonMark syntax][1] MAY be used for rich text representation.
+   * A description of the response. [CommonMark syntax][1] MAY be used for rich text representation.
    * 
    * [1]: https://spec.commonmark.org/
    */

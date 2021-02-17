@@ -26,11 +26,11 @@ description: Pets operations
  */
 export class TagObject {
   /**
-   * A short description for the tag. 
+   * The name of the tag.
    */
   name: string;
   /**
-   * A short description for the tag. [CommonMark syntax][1] MAY be used for rich text representation.
+   * A description for the tag. [CommonMark syntax][1] MAY be used for rich text representation.
    * 
    * [1]: https://spec.commonmark.org/
    */

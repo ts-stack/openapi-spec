@@ -71,11 +71,9 @@ default:
 export type ResponsesObject = HttpStatusCodesObject & {
   /**
    * The documentation of responses other than the ones declared for specific HTTP response codes.
-   * Use this field to cover undeclared responses. A [Reference Object][1] can link to a response
-   * that the [OpenAPI Object's components/responses][2] section defines.
+   * Use this field to cover undeclared responses.
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsResponses
    */
   default?: ResponseObject | ReferenceObject;
 };
@@ -83,8 +81,7 @@ export type ResponsesObject = HttpStatusCodesObject & {
 export type HttpStatusCodesObject = {
   /**
    * Any [HTTP status code][1] can be used as the property name, but only one property per code,
-   * to describe the expected response for that HTTP status code. A [Reference Object][2] can link
-   * to a response that is defined in the [OpenAPI Object's components/responses][3] section.
+   * to describe the expected response for that HTTP status code.
    * This field MUST be enclosed in quotation marks (for example, "200") for compatibility between
    * JSON and YAML. To define a range of response codes, this field MAY contain the uppercase
    * wildcard character `X`. For example, `2XX` represents all response codes between `[200-299]`.

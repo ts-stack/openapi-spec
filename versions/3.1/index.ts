@@ -30,6 +30,6 @@ export * from './src/security-requirement-object';
 export * from './src/security-scheme-object';
 export * from './src/server-object';
 export * from './src/server-variable-object';
-export * from './src/specification-extensions';
+export * from './src/specification-extension';
 export * from './src/tag-object';
 export * from './src/xml-object';

@@ -74,21 +74,26 @@ application/json:
 ```
  * 
  * ### Considerations for File Uploads
- * In contrast with the 2.0 specification, `file` input/output content in OpenAPI is described
- * with the same semantics as any other schema type.  In contrast with the 3.0 specification,
- * such schemas use the `contentEncoding` JSON Schema keyword rather than the `format` keyword.
- * This keyword supports all encodings defined in [RFC4648][2],
- * including "base64" and "base64url", as well as "quoted-printable" from [RFC2045][3].
  * 
- * JSON Schema also offers a `contentMediaType` keyword.  However, when the media type is already
- * specified by the Media Type Object's key, or by the `contentType` field of
- * an [Encoding Object][4], the `contentMediaType` keyword SHALL be ignored if present.
+ * In contrast with the 2.0 specification, `file` input/output content in OpenAPI is described with
+ * the same semantics as any other schema type.
+ * 
+ * In contrast with the 3.0 specification, the `format` keyword has no effect on the
+ * content-encoding of the schema. JSON Schema offers a `contentEncoding` keyword, which may be
+ * used to specify the `Content-Encoding` for the schema. The `contentEncoding` keyword supports
+ * all encodings defined in [RFC4648][2], including "base64" and "base64url", as well as
+ * "quoted-printable" from [RFC2045][3]. The encoding specified by the `contentEncoding` keyword is
+ * independent of an encoding specified by the `Content-Type` header in the request or response or
+ * metadata of a multipart body -- when both are present, the encoding specified in the
+ * `contentEncoding` is applied first and then the encoding specified in the `Content-Type` header.
+ * 
+ * JSON Schema also offers a `contentMediaType` keyword. However, when the media type is already
+ * specified by the Media Type Object's key, or by the `contentType` field of an
+ * [Encoding Object][4], the `contentMediaType` keyword SHALL be ignored if present.
  * 
  * Examples:
  * 
- * Content transferred in binary (octet-stream) SHOULD omit `schema`, as no JSON Schema type
- * is suitable:
- * 
+ * Content transferred in binary (octet-stream) MAY omit `schema`:
  * 
 ```yaml
 # a PNG image as a binary file:
@@ -110,8 +115,14 @@ content:
     image/png:
         schema:
             type: string
+            contentMediaType: image/png
             contentEncoding: base64
 ```
+ * 
+ * Note that the `Content-Type` remains `image/png`, describing the semantics of the payload. The
+ * JSON Schema `type` and `contentEncoding` fields explain that the payload is transferred as text.
+ * The JSON Schema `contentMediaType` is technically redundant, but can be used by JSON Schema
+ * tools that may not be aware of the OpenAPI context.
  * 
  * These examples apply to either input payloads of file uploads or response payloads.
  * 
@@ -145,9 +156,11 @@ requestBody:
           # The property name 'file' will be used for all files.
           file:
             type: array
-            items:
-              contentMediaType: application/octet-stream
+            items: {}
 ```
+ * 
+ * As seen in the section on `multipart/form-data` below, the empty schema for `items` indicates
+ * a media type of `application/octet-stream`.
  * 
  * ### Support for x-www-form-urlencoded Request Bodies
  * 
@@ -186,11 +199,11 @@ requestBody:
  * 
  * In a `multipart/form-data` request body, each schema property, or each element of a schema
  * array property, takes a section in the payload with an internal header as defined by
- * [RFC 7578][7]. The serialization strategy for each property of a `multipart/form-data` request
+ * [RFC7578][7]. The serialization strategy for each property of a `multipart/form-data` request
  * body can be specified in an associated [`Encoding Object`][4].
  * 
  * When passing in `multipart` types, boundaries MAY be used to separate sections of the content
- * being transferred — thus, the following default `Content-Type`s are defined for `multipart`:
+ * being transferred – thus, the following default `Content-Type`s are defined for `multipart`:
  * 
  * - If the property is a primitive, or an array of primitive values, the default Content-Type is
  * `text/plain`
@@ -198,13 +211,12 @@ requestBody:
  * `application/json`
  * - If the property is a `type: string` with a `contentEncoding`, the default Content-Type is
  * `application/octet-stream`
- * - If the JSON Schema keyword `contentMediaType` is used and no Encoding Object is present,
- * then the Content-Type is that which is specified by `contentMediaType`, however if an Encoding
- * Object is present, then `contentMediaType` SHALL be ignored
  * 
- * As with non-multipart request or response bodies, when using `contentMediaType` to specify
- * a binary Content-Type without also using `contentEncoding`, the JSON Schema `type` keyword
- * is omitted.
+ * Per the JSON Schema specification, `contentMediaType` without `contentEncoding` present is
+ * treated as if `contentEncoding: identity` were present.  While useful for embedding text
+ * documents such as `text/html` into JSON strings, it is not useful for a `multipart/form-data`
+ * part, as it just causes the document to be treated as `text/plain` instead of its actual media
+ * type.  Use the Encoding Object without `contentMediaType` if no `contentEncoding` is required.
  * 
  * Examples:
  * 
@@ -223,15 +235,17 @@ requestBody:
             type: object
             properties: {}
           profileImage:
-            # Content-Type with contentMediaType is the contentMediaType (image/png here)
+            # Content-Type for application-level encoded resource is `text/plain`
+            type: string
             contentMediaType: image/png
+            contentEncoding: base64
           children:
-            # default Content-Type for arrays is based on the `inner` type (text/plain here)
+            # default Content-Type for arrays is based on the _inner_ type (`text/plain` here)
             type: array
             items:
               type: string
           addresses:
-            # default Content-Type for arrays is based on the `inner` type (object shown, so `application/json` in this example)
+            # default Content-Type for arrays is based on the _inner_ type (object shown, so `application/json` in this example)
             type: array
             items:
               type: object

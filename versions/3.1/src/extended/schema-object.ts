@@ -1,6 +1,6 @@
 import { XDiscriminatorObject } from './discriminator-object';
 import { XExternalDocumentationObject } from './external-documentation-object';
-import { XmlObject } from '../origin/xml-object';
+import { XXmlObject } from './xml-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 export type SchemaObjectType = 'null' | 'boolean' | 'object' | 'array' | 'number' | 'string' | 'integer';
@@ -1232,7 +1232,7 @@ export type XSchemaObject<T extends SpecExtFieldPattern = any> = SpecificationEx
    * This MAY be used only on properties schemas. It has no effect on root schemas. Adds additional
    * metadata to describe the XML representation of this property.
    */
-  xml?: XmlObject;
+  xml?: XXmlObject;
   /**
    * Additional external documentation for this schema.
    */

@@ -1,3 +1,4 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XPathItemObject } from './path-item-object';
 
 /**
@@ -78,7 +79,7 @@ import { XPathItemObject } from './path-item-object';
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securityFiltering
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export type XPathsObject<T extends PathFieldPattern = any> = {
+export type XPathsObject<T extends PathFieldPattern = any, E extends SpecExtFieldPattern = any> = SpecificationExtension<E> & {
   /**
    * A relative path to an individual endpoint. The field name MUST begin with a forward
    * slash (`/`). The path is **appended** (no relative URL resolution) to the expanded URL

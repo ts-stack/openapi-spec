@@ -1030,7 +1030,7 @@ const oasObject: XOasObject = {
       },
       api_key: {
         scheme: 'some scheme here',
-        flows: new OAuthFlowsObject(),
+        flows: {},
         openIdConnectUrl: 'some openIdConnectUrl here',
         type: 'apiKey',
         name: 'api_key',

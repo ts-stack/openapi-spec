@@ -58,5 +58,8 @@ export * from './src/extended/security-scheme-object';
 export * from './src/extended/server-object';
 export * from './src/extended/server-variable-object';
 export * from './src/extended/tag-object';
+export * from './src/extended/contact-object';
+export * from './src/extended/license-object';
+export * from './src/extended/xml-object';
 export { XSchemaObject } from './src/extended/schema-object';
 export { XPathsObject } from './src/extended/paths-object';

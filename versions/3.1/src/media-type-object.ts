@@ -264,7 +264,7 @@ An `encoding` attribute is introduced to give you control over the serialization
  * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingStyle
  * [7]: https://tools.ietf.org/html/rfc7578
  */
-export class MediaTypeObject {
+export interface MediaTypeObject {
   /**
    * The schema defining the content of the request, response, or parameter.
    */

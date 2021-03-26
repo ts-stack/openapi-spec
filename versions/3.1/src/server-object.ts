@@ -113,7 +113,7 @@ servers:
       default: v2
 ```
  */
-export class ServerObject {
+export interface ServerObject {
   /**
    * A URL to the target host.  This URL supports Server Variables and MAY be relative,
    * to indicate that the host location is relative to the location where the OpenAPI document

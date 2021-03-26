@@ -56,7 +56,7 @@ $ref: definitions.yaml#/Pet
  * [2]: https://tools.ietf.org/html/rfc3986
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
  */
-export class ReferenceObject {
+export interface ReferenceObject {
   /**
    * The reference identifier. This MUST be in the form of a URI.
    */

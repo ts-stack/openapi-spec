@@ -142,7 +142,7 @@ components:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class DiscriminatorObject {
+export interface DiscriminatorObject {
   /**
    * The name of the property in the payload that will hold the discriminator value.
    */

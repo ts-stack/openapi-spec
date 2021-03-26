@@ -46,7 +46,7 @@ requestBody:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class EncodingObject {
+export interface EncodingObject {
   /**
    * Content-Type for encoding a specific property. Default value depends on the property type:
    * - for `object` - `application/json`;

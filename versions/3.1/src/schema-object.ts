@@ -436,7 +436,7 @@ components:
  * [12]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
  * [13]: https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-8.1.1
  */
-export class SchemaObject {
+export interface SchemaObject {
   /**
    * The "$ref" keyword is an applicator that is used to reference a
    * statically identified schema.  Its results are the results of the

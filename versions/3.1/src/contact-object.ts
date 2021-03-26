@@ -23,7 +23,7 @@ url: https://www.example.com/support
 email: support@example.com
 ```
  */
-export class ContactObject {
+export interface ContactObject {
   /**
    * The identifying name of the contact person/organization.
    */

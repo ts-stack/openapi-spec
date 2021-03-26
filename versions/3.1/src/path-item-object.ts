@@ -102,7 +102,7 @@ parameters:
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securityFiltering
  */
-export class PathItemObject {
+export interface PathItemObject {
   /**
    * Allows for a referenced definition of this path item. The referenced structure MUST be
    * in the form of a [Path Item Object][1]. In case a Path Item Object

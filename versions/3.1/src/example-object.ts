@@ -64,7 +64,7 @@ responses:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class ExampleObject {
+export interface ExampleObject {
   /**
    * Short description for the example.
    */

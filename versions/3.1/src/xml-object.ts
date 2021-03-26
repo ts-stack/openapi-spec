@@ -366,7 +366,7 @@ animals:
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#xmlWrapped
  */
-export class XmlObject {
+export interface XmlObject {
   /**
    * Replaces the name of the element/attribute used for the described schema property. When
    * defined within `items`, it will affect the name of the individual XML elements within the

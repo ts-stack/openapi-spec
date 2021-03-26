@@ -77,7 +77,7 @@ security:
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
  * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  */
-export class SecurityRequirementObject {
+export interface SecurityRequirementObject {
   /**
    * Each name MUST correspond to a security scheme which is declared in the [Security Schemes][1]
    * under the [Components Object][2]. If the security scheme is of type `"oauth2"` or

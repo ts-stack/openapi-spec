@@ -21,7 +21,7 @@ name: Apache 2.0
 identifier: Apache-2.0
 ```
  */
-export class LicenseObject {
+export interface LicenseObject {
   /**
    * The license name used for the API.
    */

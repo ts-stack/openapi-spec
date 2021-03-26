@@ -119,7 +119,7 @@ links:
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  */
-export class LinkObject {
+export interface LinkObject {
   /**
    * A relative or absolute URI reference to an OAS operation. This field is mutually exclusive of
    * the `operationId` field, and MUST point to an [Operation Object][1]. Relative

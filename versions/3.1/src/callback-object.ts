@@ -102,7 +102,7 @@ transactionCallback:
  * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
  * [5]: https://tools.ietf.org/html/rfc6901
  */
-export class CallbackObject {
+export interface CallbackObject {
   /**
    * A Path Item Object, or a reference to one, used to define a callback request and expected
    * responses. A [complete example][1] is available.

@@ -4,7 +4,7 @@ import { ReferenceObject } from './reference-object';
 import { SchemaObject } from './schema-object';
 import { OasStyle } from './oas-style';
 
-export class BaseParameterObject {
+export interface BaseParameterObject {
   /**
    * A brief description of the parameter. This could contain examples of use.
    * [CommonMark syntax][1] MAY be used for rich text representation.

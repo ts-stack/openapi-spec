@@ -218,7 +218,7 @@ content:
  * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterContent
  * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class ParameterObject extends BaseParameterObject {
+export interface ParameterObject extends BaseParameterObject {
   /**
    * The name of the parameter. Parameter names are *case sensitive*.
    * - If [`in`][1] is `"path"`, the `name` field MUST correspond to a template expression

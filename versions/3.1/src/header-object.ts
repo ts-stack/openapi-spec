@@ -34,7 +34,7 @@ schema:
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
  */
-export class HeaderObject extends BaseParameterObject {
+export interface HeaderObject extends BaseParameterObject {
   /**
    * MUST NOT be specified, it is given in the corresponding `headers` map.
    */

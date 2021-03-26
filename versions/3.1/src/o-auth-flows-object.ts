@@ -7,7 +7,7 @@ import { OAuthFlowObject } from './o-auth-flow-object';
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class OAuthFlowsObject {
+export interface OAuthFlowsObject {
   /**
    * Configuration for the OAuth Implicit flow.
    */

@@ -15,7 +15,7 @@ import { TagObject } from './tag-object';
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class OasObject {
+export interface OasObject {
   /**
    * This string MUST be the [version number][1] of the [OpenAPI Specification version][1]
    * that the OpenAPI document uses. The `openapi` field SHOULD be used by tooling specifications and

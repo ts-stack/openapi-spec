@@ -24,7 +24,7 @@ description: Pets operations
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class TagObject {
+export interface TagObject {
   /**
    * The name of the tag.
    */

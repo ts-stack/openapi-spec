@@ -5,7 +5,7 @@
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class ServerVariableObject {
+export interface ServerVariableObject {
   /**
    * An enumeration of string values to be used if the substitution options are from a limited set.
    * The array MUST NOT be empty.

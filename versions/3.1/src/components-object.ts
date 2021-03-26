@@ -209,7 +209,7 @@ components:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class ComponentsObject {
+export interface ComponentsObject {
   /**
    * An object to hold reusable [Schema Objects][1].
    * 

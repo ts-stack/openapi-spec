@@ -21,7 +21,7 @@ url: https://example.com
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class ExternalDocumentationObject {
+export interface ExternalDocumentationObject {
   /**
    * A description of the target documentation.
    * [CommonMark syntax][1] MAY be used for rich text representation.

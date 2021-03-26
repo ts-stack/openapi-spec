@@ -124,7 +124,7 @@ content:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class RequestBodyObject {
+export interface RequestBodyObject {
   /**
    * A brief description of the request body. This could contain examples of use.
    * [CommonMark syntax][1] MAY be used for rich text representation.

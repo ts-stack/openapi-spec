@@ -48,7 +48,7 @@ license:
 version: 1.0.1
 ```
  */
-export class InfoObject {
+export interface InfoObject {
   /**
    * The title of the API.
    */

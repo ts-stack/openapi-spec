@@ -128,7 +128,7 @@ security:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export class OperationObject {
+export interface OperationObject {
   /**
    * A list of tags for API documentation control. Tags can be used for logical grouping of
    * operations by resources or any other qualifier.

@@ -34,7 +34,6 @@ export * from './src/origin/specification-extension';
 export * from './src/origin/tag-object';
 export * from './src/origin/xml-object';
 
-export * from './src/extended/base-parameter-object';
 export * from './src/extended/callback-object';
 export * from './src/extended/components-object';
 export * from './src/extended/discriminator-object';

@@ -8,7 +8,7 @@ but the patch version is not the same:
 
 | OpenAPI Specification   | @ts-stack/open-api-spec |
 |-------------------------|-------------------------|
-| v3.1.0                  | <ul><li>v3.1.0</li></ul>|
+| v3.1.0                  | <ul><li>v3.1.0</li><li>v3.1.1</li></ul> |
 
 
 ## Introduction
@@ -33,7 +33,20 @@ npm i @ts-stack/open-api-spec
 
 ## SpecificationExtension Usage
 
-You can extends any of model in this way:
+If you want to use already extended interfaces, you need to import interfaces with the `X` prefix:
+
+```ts
+import { XOasObject } from '@ts-stack/open-api-spec';
+
+const extendedOasObject: XOasObject<'x-one' | 'x-two'> = {
+  info: {title: '', version: ''},
+  openapi: '',
+  'x-one': '',
+  'x-two': '',
+};
+```
+
+Or, you can extends any of model in this way:
 
 ```ts
 import { OasObject, SpecificationExtension } from '@ts-stack/open-api-spec';

@@ -1,5 +1,12 @@
+<a name="3.1.1"></a>
+# [3.1.1](https://github.com/ts-stack/ditsmod/releases/tag/3.1.1) (2021-03-26)
+
+### Features
+
+- Added extended interfaces with a prefix `X`.
+
 <a name="3.1.0"></a>
-# [3.1.0](https://github.com/ts-stack/ditsmod/releases/tag/3.1.0) (2021-02-17)
+## [3.1.0](https://github.com/ts-stack/ditsmod/releases/tag/3.1.0) (2021-02-17)
 
 ### Breaking Changes
 

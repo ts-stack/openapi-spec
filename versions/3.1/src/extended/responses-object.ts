@@ -1,6 +1,7 @@
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { XResponseObject } from './response-object';
-import { HttpStatusCode } from './http-status-code';
+import { HttpStatusCode } from '../origin/http-status-code';
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
  * A container for the expected responses of an operation.
@@ -68,14 +69,14 @@ default:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export type XResponsesObject = XHttpStatusCodesObject & {
+export type XResponsesObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & XHttpStatusCodesObject & {
   /**
    * The documentation of responses other than the ones declared for specific HTTP response codes.
    * Use this field to cover undeclared responses.
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
    */
-  default?: XResponseObject | XReferenceObject;
+  default?: XResponseObject | ReferenceObject;
 };
 
 export type XHttpStatusCodesObject = {
@@ -93,5 +94,5 @@ export type XHttpStatusCodesObject = {
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
    * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsResponses
    */
-  [P in HttpStatusCode]?: XResponseObject | XReferenceObject;
+  [P in HttpStatusCode]?: XResponseObject | ReferenceObject;
 };

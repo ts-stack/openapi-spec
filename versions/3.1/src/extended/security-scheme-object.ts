@@ -1,3 +1,4 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XOAuthFlowsObject } from './o-auth-flows-object';
 
 /**
@@ -98,7 +99,7 @@ flows:
  * [3]: https://tools.ietf.org/html/draft-ietf-oauth-security-topics
  * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XSecuritySchemeObject {
+export type XSecuritySchemeObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * Applies To any.
    *

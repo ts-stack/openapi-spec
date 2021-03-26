@@ -4,7 +4,7 @@ import { HeaderObject } from './header-object';
 import { LinkObject } from './link-object';
 import { ParameterObject } from './parameter-object';
 import { PathItemObject } from './path-item-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { RequestBodyObject } from './request-body-object';
 import { ResponseObject } from './response-object';
 import { SchemaObject } from './schema-object';

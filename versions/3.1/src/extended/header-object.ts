@@ -2,7 +2,7 @@ import { BaseParameterObject } from '../origin/base-parameter-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XExampleObject } from './example-object';
 import { XMediaTypeObject } from './media-type-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { XSchemaObject } from './schema-object';
 
 /**
@@ -51,6 +51,6 @@ interface ExtendedHeaderObject extends BaseParameterObject {
    */
   in?: never;
   schema?: XSchemaObject;
-  examples?: { [exampleName: string]: XExampleObject | XReferenceObject };
+  examples?: { [exampleName: string]: XExampleObject | ReferenceObject };
   content?: { [mediaTypeName: string]: XMediaTypeObject };
 }

@@ -50,7 +50,6 @@ export * from './src/extended/oas-object';
 export * from './src/extended/operation-object';
 export * from './src/extended/parameter-object';
 export * from './src/extended/path-item-object';
-export * from './src/extended/reference-object';
 export * from './src/extended/request-body-object';
 export * from './src/extended/response-object';
 export * from './src/extended/responses-object';

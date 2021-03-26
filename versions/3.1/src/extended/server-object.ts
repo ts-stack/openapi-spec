@@ -1,3 +1,4 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XServerVariableObject } from './server-variable-object';
 
 /**
@@ -113,7 +114,7 @@ servers:
       default: v2
 ```
  */
-export interface XServerObject {
+export type XServerObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * A URL to the target host.  This URL supports Server Variables and MAY be relative,
    * to indicate that the host location is relative to the location where the OpenAPI document

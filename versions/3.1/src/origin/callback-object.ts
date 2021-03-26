@@ -1,5 +1,5 @@
 import { PathItemObject } from './path-item-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 
 /**
  * A map of possible out-of band callbacks related to the parent operation.

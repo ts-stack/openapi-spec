@@ -1,6 +1,6 @@
 import { ExampleObject } from './example-object';
 import { MediaTypeObject } from './media-type-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { SchemaObject } from './schema-object';
 import { OasStyle } from './oas-style';
 

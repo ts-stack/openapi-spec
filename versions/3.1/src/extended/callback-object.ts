@@ -1,5 +1,6 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XPathItemObject } from './path-item-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 
 /**
  * A map of possible out-of band callbacks related to the parent operation.
@@ -102,12 +103,12 @@ transactionCallback:
  * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
  * [5]: https://tools.ietf.org/html/rfc6901
  */
-export interface XCallbackObject {
+export type XCallbackObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * A Path Item Object, or a reference to one, used to define a callback request and expected
    * responses. A [complete example][1] is available.
-   * 
+   *
    * [1]: ../examples/v3.0/callback-example.yaml
    */
-  [expression: string]: XPathItemObject | XReferenceObject;
-}
+  [expression: string]: XPathItemObject | ReferenceObject;
+};

@@ -1,6 +1,7 @@
 import { XHeaderObject } from './header-object';
 import { OasStyle } from '../origin/oas-style';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
  * A single encoding definition applied to a single schema property.
@@ -46,7 +47,7 @@ requestBody:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XEncodingObject {
+export type XEncodingObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * Content-Type for encoding a specific property. Default value depends on the property type:
    * - for `object` - `application/json`;
@@ -62,7 +63,7 @@ export interface XEncodingObject {
    * `Content-Disposition`.  `Content-Type` is described separately and SHALL be ignored in this
    * section. This property SHALL be ignored if the request body media type is not a `multipart`.
    */
-  headers?: { [headerName: string]: XHeaderObject | XReferenceObject };
+  headers?: { [headerName: string]: XHeaderObject | ReferenceObject };
   /**
    * Describes how a specific property value will be serialized depending on its type.
    * See [Parameter Object][1] for details on the [`style`][2] property. The behavior follows the

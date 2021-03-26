@@ -1,10 +1,11 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XCallbackObject } from './callback-object';
 import { XExampleObject } from './example-object';
 import { XHeaderObject } from './header-object';
 import { XLinkObject } from './link-object';
 import { XParameterObject } from './parameter-object';
 import { XPathItemObject } from './path-item-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { XRequestBodyObject } from './request-body-object';
 import { XResponseObject } from './response-object';
 import { XSchemaObject } from './schema-object';
@@ -209,7 +210,7 @@ components:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XComponentsObject {
+export type XComponentsObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * An object to hold reusable [Schema Objects][1].
    * 
@@ -221,53 +222,53 @@ export interface XComponentsObject {
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#responseObject
    */
-  responses?: { [responseName: string]: XResponseObject | XReferenceObject };
+  responses?: { [responseName: string]: XResponseObject | ReferenceObject };
   /**
    * An object to hold reusable [Parameter Objects][1].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
    */
-  parameters?: { [parameterName: string]: XParameterObject | XReferenceObject };
+  parameters?: { [parameterName: string]: XParameterObject | ReferenceObject };
   /**
    * An object to hold reusable [Example Objects](#exampleObject).
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#exampleObject
    */
-  examples?: { [exampleName: string]: XExampleObject | XReferenceObject };
+  examples?: { [exampleName: string]: XExampleObject | ReferenceObject };
   /**
    * An object to hold reusable [Request Body Objects][1].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#requestBodyObject
    */
-  requestBodies?: { [requestBodyName: string]: XRequestBodyObject | XReferenceObject };
+  requestBodies?: { [requestBodyName: string]: XRequestBodyObject | ReferenceObject };
   /**
    * An object to hold reusable [Header Objects][1].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#headerObject
    */
-  headers?: { [headerBodyName: string]: XHeaderObject | XReferenceObject };
+  headers?: { [headerBodyName: string]: XHeaderObject | ReferenceObject };
   /**
    * An object to hold reusable [Security Scheme Objects][1].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securitySchemeObject
    */
-  securitySchemes?: { [securitySchemeName: string]: XSecuritySchemeObject | XReferenceObject };
+  securitySchemes?: { [securitySchemeName: string]: XSecuritySchemeObject | ReferenceObject };
   /**
    * An object to hold reusable [Link Objects][1].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#linkObject
    */
-  links?: { [linkName: string]: XLinkObject | XReferenceObject };
+  links?: { [linkName: string]: XLinkObject | ReferenceObject };
   /**
    * An object to hold reusable [Callback Objects][1].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callbackObject
    */
-  callbacks?: { [callbackName: string]: XCallbackObject | XReferenceObject };
+  callbacks?: { [callbackName: string]: XCallbackObject | ReferenceObject };
   /**
    * An object to hold reusable [Path Item Object][1].
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemObject
    */
-  pathItems?: { [pathItemName: string]: XPathItemObject | XReferenceObject };
+  pathItems?: { [pathItemName: string]: XPathItemObject | ReferenceObject };
 }

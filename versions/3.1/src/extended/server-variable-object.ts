@@ -1,3 +1,5 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
+
 /**
  * An object representing a Server Variable for server URL template substitution.
  * 
@@ -5,7 +7,7 @@
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XServerVariableObject {
+export type XServerVariableObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * An enumeration of string values to be used if the substitution options are from a limited set.
    * The array MUST NOT be empty.

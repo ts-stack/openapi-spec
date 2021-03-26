@@ -1,3 +1,5 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
+
 /**
  * In all cases, the example value is expected to be compatible with the type schema
  * of its associated value.  Tooling implementations MAY choose to validate compatibility
@@ -64,7 +66,7 @@ responses:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XExampleObject {
+export type XExampleObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * Short description for the example.
    */

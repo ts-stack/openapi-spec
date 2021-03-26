@@ -1,9 +1,10 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XComponentsObject } from './components-object';
 import { XExternalDocumentationObject } from './external-documentation-object';
 import { XInfoObject } from './info-object';
 import { XPathItemObject } from './path-item-object';
 import { XPathsObject } from './paths-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { XSecurityRequirementObject } from './security-requirement-object';
 import { XServerObject } from './server-object';
 import { XTagObject } from './tag-object';
@@ -15,7 +16,7 @@ import { XTagObject } from './tag-object';
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XOasObject {
+export type XOasObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * This string MUST be the [version number][1] of the [OpenAPI Specification version][1]
    * that the OpenAPI document uses. The `openapi` field SHOULD be used by tooling specifications and
@@ -53,7 +54,7 @@ export interface XOasObject {
    * 
    * [1]: ../examples/v3.1/webhook-example.yaml
    */
-  webhooks?: { [webhookName: string]: XPathItemObject | XReferenceObject };
+  webhooks?: { [webhookName: string]: XPathItemObject | ReferenceObject };
   /**
    * An element to hold various schemas for the document.
    */

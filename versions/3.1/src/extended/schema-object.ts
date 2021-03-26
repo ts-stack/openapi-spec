@@ -1,6 +1,7 @@
 import { XDiscriminatorObject } from './discriminator-object';
 import { XExternalDocumentationObject } from './external-documentation-object';
 import { XmlObject } from '../origin/xml-object';
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 export type SchemaObjectType = 'null' | 'boolean' | 'object' | 'array' | 'number' | 'string' | 'integer';
 
@@ -436,7 +437,7 @@ components:
  * [12]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
  * [13]: https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-8.1.1
  */
-export interface XSchemaObject {
+export type XSchemaObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * The "$ref" keyword is an applicator that is used to reference a
    * statically identified schema.  Its results are the results of the
@@ -899,7 +900,7 @@ export interface XSchemaObject {
    * validates successfully against all schemas defined by this keyword's
    * value.
    */
-  allOf?: [this, ...this[]];
+  allOf?: [XSchemaObject, ...XSchemaObject[]];
   /**
    * This keyword's value MUST be a non-empty array.  Each item of the
    * array MUST be a valid JSON Schema.
@@ -910,7 +911,7 @@ export interface XSchemaObject {
    * subschemas MUST be examined so that annotations are collected from
    * each subschema that validates successfully.
    */
-  anyOf?: [this, ...this[]];
+  anyOf?: [XSchemaObject, ...XSchemaObject[]];
   /**
    * This keyword's value MUST be a non-empty array.  Each item of the
    * array MUST be a valid JSON Schema.
@@ -919,14 +920,14 @@ export interface XSchemaObject {
    * validates successfully against exactly one schema defined by this
    * keyword's value.
    */
-  oneOf?: [this, ...this[]];
+  oneOf?: [XSchemaObject, ...XSchemaObject[]];
   /**
    * This keyword's value MUST be a valid JSON Schema.
    * 
    * An instance is valid against this keyword if it fails to validate
    * successfully against the schema defined by this keyword.
    */
-  not?: this;
+  not?: XSchemaObject;
   /**
    * This keyword's value MUST be a valid JSON Schema.
    * 
@@ -946,7 +947,7 @@ export interface XSchemaObject {
    * from this keyword's subschema in the usual way, including when the
    * keyword is present without either "then" or "else".
    */
-  if?: this;
+  if?: XSchemaObject;
   /**
    * This keyword's value MUST be a valid JSON Schema.
    * 
@@ -960,7 +961,7 @@ export interface XSchemaObject {
    * evaluate the instance against this keyword, for either validation or
    * annotation collection purposes, in such cases.
    */
-  then?: this;
+  then?: XSchemaObject;
   /**
    * This keyword's value MUST be a valid JSON Schema.
    * 
@@ -973,7 +974,7 @@ export interface XSchemaObject {
    * NOT evaluate the instance against this keyword, for either validation
    * or annotation collection purposes, in such cases.
    */
-  else?: this;
+  else?: XSchemaObject;
   /**
    * This keyword specifies subschemas that are evaluated if the instance
    * is an object and contains a certain property.
@@ -1012,7 +1013,7 @@ export interface XSchemaObject {
    * Omitting this keyword has the same assertion behavior as an empty
    * schema.
    */
-  items?: this | { [item: string]: XSchemaObject };
+  items?: XSchemaObject | { [item: string]: XSchemaObject };
   /**
    * The value of "additionalItems" MUST be a valid JSON Schema.
    * 
@@ -1040,7 +1041,7 @@ export interface XSchemaObject {
    * checking for the presence and size of an "items" array.
    * Implementations that do not support annotation collection MUST do so.
    */
-  additionalItems?: this;
+  additionalItems?: XSchemaObject;
   /**
    * The value of "unevaluatedItems" MUST be a valid JSON Schema.
    * 
@@ -1084,7 +1085,7 @@ export interface XSchemaObject {
    * Implementations that do not collect annotations MUST raise an error
    * upon encountering this keyword.
    */
-  unevaluatedItems?: this;
+  unevaluatedItems?: XSchemaObject;
   /**
    * The value of this keyword MUST be a valid JSON Schema.
    * 
@@ -1094,7 +1095,7 @@ export interface XSchemaObject {
    * element even after the first match has been found.  This is to ensure
    * that all possible annotations are collected.
    */
-  contains?: this;
+  contains?: XSchemaObject;
   /**
    * The value of "properties" MUST be an object.  Each value of this
    * object MUST be a valid JSON Schema.
@@ -1160,7 +1161,7 @@ export interface XSchemaObject {
    * "patternProperties" against the instance property set.
    * Implementations that do not support annotation collection MUST do so.
    */
-  additionalProperties?: this;
+  additionalProperties?: XSchemaObject;
   /**
    * The value of "unevaluatedProperties" MUST be a valid JSON Schema.
    * 
@@ -1200,7 +1201,7 @@ export interface XSchemaObject {
    * Implementations that do not collect annotations MUST raise an error
    * upon encountering this keyword.
    */
-  unevaluatedProperties?: this;
+  unevaluatedProperties?: XSchemaObject;
   /**
    * The value of "propertyNames" MUST be a valid JSON Schema.
    * 

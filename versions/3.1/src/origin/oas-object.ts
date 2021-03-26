@@ -3,7 +3,7 @@ import { ExternalDocumentationObject } from './external-documentation-object';
 import { InfoObject } from './info-object';
 import { PathItemObject } from './path-item-object';
 import { PathsObject } from './paths-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { SecurityRequirementObject } from './security-requirement-object';
 import { ServerObject } from './server-object';
 import { TagObject } from './tag-object';

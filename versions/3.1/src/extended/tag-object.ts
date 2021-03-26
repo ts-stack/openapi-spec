@@ -1,3 +1,4 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XExternalDocumentationObject } from './external-documentation-object';
 
 /**
@@ -24,7 +25,7 @@ description: Pets operations
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XTagObject {
+export type XTagObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * The name of the tag.
    */

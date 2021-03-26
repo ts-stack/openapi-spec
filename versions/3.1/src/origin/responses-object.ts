@@ -1,4 +1,4 @@
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { ResponseObject } from './response-object';
 import { HttpStatusCode } from './http-status-code';
 

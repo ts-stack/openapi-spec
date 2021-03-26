@@ -1,6 +1,6 @@
 import { OperationObject } from './operation-object';
 import { ParameterObject } from './parameter-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { ServerObject } from './server-object';
 
 /**

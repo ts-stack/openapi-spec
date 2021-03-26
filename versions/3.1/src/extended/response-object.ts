@@ -1,7 +1,8 @@
 import { XHeaderObject } from './header-object';
 import { XLinkObject } from './link-object';
 import { XMediaTypeObject } from './media-type-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
  * Describes a single response from an API Operation, including design-time, static 
@@ -151,7 +152,7 @@ description: object created
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XResponseObject {
+export type XResponseObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * A description of the response. [CommonMark syntax][1] MAY be used for rich text representation.
    * 
@@ -164,7 +165,7 @@ export interface XResponseObject {
    * 
    * [1]: https://tools.ietf.org/html/rfc7230#page-22
    */
-  headers?: { [headerName: string]: XHeaderObject | XReferenceObject };
+  headers?: { [headerName: string]: XHeaderObject | ReferenceObject };
   /**
    * A map containing descriptions of potential response payloads. The key is a media type or
    * [media type range][1] and the value describes it.  For responses that match multiple keys,
@@ -180,5 +181,5 @@ export interface XResponseObject {
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsObject
    */
-  links?: { [linkName: string]: XLinkObject | XReferenceObject };
+  links?: { [linkName: string]: XLinkObject | ReferenceObject };
 }

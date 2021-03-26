@@ -1,7 +1,7 @@
 import { CallbackObject } from './callback-object';
 import { ExternalDocumentationObject } from './external-documentation-object';
 import { ParameterObject } from './parameter-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { RequestBodyObject } from './request-body-object';
 import { ResponsesObject } from './responses-object';
 import { SecurityRequirementObject } from './security-requirement-object';

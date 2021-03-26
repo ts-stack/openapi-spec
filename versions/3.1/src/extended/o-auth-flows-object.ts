@@ -1,3 +1,4 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XOAuthFlowObject } from './o-auth-flow-object';
 
 /**
@@ -7,7 +8,7 @@ import { XOAuthFlowObject } from './o-auth-flow-object';
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XOAuthFlowsObject {
+export type XOAuthFlowsObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * Configuration for the OAuth Implicit flow.
    */

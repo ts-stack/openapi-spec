@@ -1,6 +1,7 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XEncodingObject } from './encoding-object';
 import { XExampleObject } from './example-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { XSchemaObject } from './schema-object';
 
 /**
@@ -264,7 +265,7 @@ An `encoding` attribute is introduced to give you control over the serialization
  * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingStyle
  * [7]: https://tools.ietf.org/html/rfc7578
  */
-export interface XMediaTypeObject {
+export type XMediaTypeObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * The schema defining the content of the request, response, or parameter.
    */
@@ -282,7 +283,7 @@ export interface XMediaTypeObject {
    * Furthermore, if referencing a `schema` which contains an example, the `examples` value
    * SHALL _override_ the example provided by the schema.
    */
-  examples?: { [exampleName: string]: XExampleObject | XReferenceObject };
+  examples?: { [exampleName: string]: XExampleObject | ReferenceObject };
   /**
    * A map between a property name and its encoding information. The key, being the property name,
    * MUST exist in the schema as a property. The encoding object SHALL only apply to `requestBody`

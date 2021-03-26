@@ -1,3 +1,5 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
+
 /**
  * When request bodies or response payloads may be one of a number of different schemas,
  * a `discriminator` object can be used to aid in serialization, deserialization, and validation.
@@ -142,7 +144,7 @@ components:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XDiscriminatorObject {
+export type XDiscriminatorObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * The name of the property in the payload that will hold the discriminator value.
    */

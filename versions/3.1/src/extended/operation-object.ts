@@ -1,7 +1,8 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XCallbackObject } from './callback-object';
 import { XExternalDocumentationObject } from './external-documentation-object';
 import { XParameterObject } from './parameter-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { XRequestBodyObject } from './request-body-object';
 import { XResponsesObject } from './responses-object';
 import { XSecurityRequirementObject } from './security-requirement-object';
@@ -128,7 +129,7 @@ security:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XOperationObject {
+export type XOperationObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * A list of tags for API documentation control. Tags can be used for logical grouping of
    * operations by resources or any other qualifier.
@@ -169,7 +170,7 @@ export interface XOperationObject {
    * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
    * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsParameters
    */
-  parameters?: (XParameterObject | XReferenceObject)[];
+  parameters?: (XParameterObject | ReferenceObject)[];
   /**
    * The request body applicable for this operation.  The `requestBody` is fully supported in HTTP
    * methods where the HTTP 1.1 specification [RFC7231][1] has explicitly defined semantics for
@@ -181,7 +182,7 @@ export interface XOperationObject {
    * [2]: https://tools.ietf.org/html/rfc7231#section-4.3.2
    * [3]: https://tools.ietf.org/html/rfc7231#section-4.3.5
    */
-  requestBody?: XRequestBodyObject | XReferenceObject;
+  requestBody?: XRequestBodyObject | ReferenceObject;
   /**
    * The list of possible responses as they are returned from executing this operation.
    */
@@ -193,7 +194,7 @@ export interface XOperationObject {
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callbackObject
    */
-  callbacks?: { [callbackName: string]: XCallbackObject | XReferenceObject };
+  callbacks?: { [callbackName: string]: XCallbackObject | ReferenceObject };
   /**
    * Declares this operation to be deprecated. Consumers SHOULD refrain from usage of the declared
    * operation. Default value is `false`.

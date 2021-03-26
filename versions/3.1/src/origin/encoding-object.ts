@@ -1,6 +1,6 @@
 import { HeaderObject } from './header-object';
 import { OasStyle } from './oas-style';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 
 /**
  * A single encoding definition applied to a single schema property.

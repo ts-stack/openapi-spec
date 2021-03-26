@@ -1,6 +1,7 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XOperationObject } from './operation-object';
 import { XParameterObject } from './parameter-object';
-import { XReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { XServerObject } from './server-object';
 
 /**
@@ -102,7 +103,7 @@ parameters:
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securityFiltering
  */
-export interface XPathItemObject {
+export type XPathItemObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * Allows for a referenced definition of this path item. The referenced structure MUST be
    * in the form of a [Path Item Object][1]. In case a Path Item Object
@@ -173,5 +174,5 @@ export interface XPathItemObject {
    * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
    * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsParameters
    */
-  parameters?: (XParameterObject | XReferenceObject)[];
+  parameters?: (XParameterObject | ReferenceObject)[];
 }

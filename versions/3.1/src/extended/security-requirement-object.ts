@@ -1,3 +1,5 @@
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
+
 /**
  * Lists the required security schemes to execute this operation.
  * The name used for each property MUST correspond to a security scheme declared in the
@@ -77,7 +79,7 @@ security:
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
  * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  */
-export interface XSecurityRequirementObject {
+export type XSecurityRequirementObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * Each name MUST correspond to a security scheme which is declared in the [Security Schemes][1]
    * under the [Components Object][2]. If the security scheme is of type `"oauth2"` or

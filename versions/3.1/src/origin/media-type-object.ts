@@ -1,6 +1,6 @@
 import { EncodingObject } from './encoding-object';
 import { ExampleObject } from './example-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 import { SchemaObject } from './schema-object';
 
 /**

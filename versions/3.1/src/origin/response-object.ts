@@ -1,7 +1,7 @@
 import { HeaderObject } from './header-object';
 import { LinkObject } from './link-object';
 import { MediaTypeObject } from './media-type-object';
-import { ReferenceObject } from './reference-object';
+import { ReferenceObject } from '../origin/reference-object';
 
 /**
  * Describes a single response from an API Operation, including design-time, static 

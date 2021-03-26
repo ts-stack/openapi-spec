@@ -1,5 +1,6 @@
-import { ContactObject as XContactObject } from './contact-object';
-import { LicenseObject as XLicenseObject } from './license-object';
+import { ContactObject } from '../origin/contact-object';
+import { LicenseObject } from '../origin/license-object';
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
  * The object provides metadata about the API.
@@ -48,7 +49,7 @@ license:
 version: 1.0.1
 ```
  */
-export interface XInfoObject {
+export type XInfoObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
    * The title of the API.
    */
@@ -71,11 +72,11 @@ export interface XInfoObject {
   /**
    * The contact information for the exposed API.
    */
-  contact?: XContactObject;
+  contact?: ContactObject;
   /**
    * The license information for the exposed API.
    */
-  license?: XLicenseObject;
+  license?: LicenseObject;
   /**
    * The version of the OpenAPI document (which is distinct from the
    * [OpenAPI Specification version][1] or the API implementation version).

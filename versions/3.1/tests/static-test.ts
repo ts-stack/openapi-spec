@@ -1,6 +1,6 @@
-import { OasObject, OAuthFlowsObject } from '..';
+import { XOasObject } from '..';
 
-const oasObject: OasObject = {
+const oasObject: XOasObject = {
   openapi: '3.0.1',
   info: {
     title: 'Swagger Petstore',

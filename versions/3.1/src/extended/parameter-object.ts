@@ -1,4 +1,9 @@
-import { XBaseParameterObject } from './base-parameter-object';
+import { BaseParameterObject } from '../origin/base-parameter-object';
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
+import { XExampleObject } from './example-object';
+import { XMediaTypeObject } from './media-type-object';
+import { XReferenceObject } from './reference-object';
+import { XSchemaObject } from './schema-object';
 
 /**
  * Describes a single operation parameter.
@@ -218,7 +223,9 @@ content:
  * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterContent
  * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export interface XParameterObject extends XBaseParameterObject {
+export type XParameterObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & ExtendedParameterObject;
+
+interface ExtendedParameterObject extends BaseParameterObject {
   /**
    * The name of the parameter. Parameter names are *case sensitive*.
    * - If [`in`][1] is `"path"`, the `name` field MUST correspond to a template expression
@@ -240,4 +247,7 @@ export interface XParameterObject extends XBaseParameterObject {
    * or `"cookie"`.
    */
   in: 'query' | 'header' | 'path' | 'cookie';
+  schema?: XSchemaObject;
+  examples?: { [exampleName: string]: XExampleObject | XReferenceObject };
+  content?: { [mediaTypeName: string]: XMediaTypeObject };
 }

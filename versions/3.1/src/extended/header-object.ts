@@ -1,4 +1,9 @@
-import { XBaseParameterObject } from './base-parameter-object';
+import { BaseParameterObject } from '../origin/base-parameter-object';
+import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
+import { XExampleObject } from './example-object';
+import { XMediaTypeObject } from './media-type-object';
+import { XReferenceObject } from './reference-object';
+import { XSchemaObject } from './schema-object';
 
 /**
  * The Header Object follows the structure of the [Parameter Object][1] with the following changes:
@@ -34,7 +39,9 @@ schema:
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
  */
-export interface XHeaderObject extends XBaseParameterObject {
+export type XHeaderObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & ExtendedHeaderObject;
+
+interface ExtendedHeaderObject extends BaseParameterObject {
   /**
    * MUST NOT be specified, it is given in the corresponding `headers` map.
    */
@@ -43,4 +50,7 @@ export interface XHeaderObject extends XBaseParameterObject {
    * MUST NOT be specified, it is implicitly in `header`.
    */
   in?: never;
+  schema?: XSchemaObject;
+  examples?: { [exampleName: string]: XExampleObject | XReferenceObject };
+  content?: { [mediaTypeName: string]: XMediaTypeObject };
 }

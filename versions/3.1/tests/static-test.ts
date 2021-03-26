@@ -1,4 +1,4 @@
-import { OasObject, OAuthFlowsObject} from '..';
+import { OasObject, OAuthFlowsObject } from '..';
 
 const oasObject: OasObject = {
   openapi: '3.0.1',
@@ -1030,7 +1030,7 @@ const oasObject: OasObject = {
       },
       api_key: {
         scheme: 'some scheme here',
-        flows: new OAuthFlowsObject,
+        flows: new OAuthFlowsObject(),
         openIdConnectUrl: 'some openIdConnectUrl here',
         type: 'apiKey',
         name: 'api_key',

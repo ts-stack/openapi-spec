@@ -1,6 +1,6 @@
 import { XDiscriminatorObject } from './discriminator-object';
 import { XExternalDocumentationObject } from './external-documentation-object';
-import { XmlObject } from './xml-object';
+import { XmlObject } from '../origin/xml-object';
 
 export type SchemaObjectType = 'null' | 'boolean' | 'object' | 'array' | 'number' | 'string' | 'integer';
 

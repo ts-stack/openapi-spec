@@ -1,5 +1,5 @@
 import { XHeaderObject } from './header-object';
-import { OasStyle } from './oas-style';
+import { OasStyle } from '../origin/oas-style';
 import { XReferenceObject } from './reference-object';
 
 /**

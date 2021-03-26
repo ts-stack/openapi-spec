@@ -2,7 +2,7 @@ import { XExampleObject } from './example-object';
 import { XMediaTypeObject } from './media-type-object';
 import { XReferenceObject } from './reference-object';
 import { XSchemaObject } from './schema-object';
-import { OasStyle } from './oas-style';
+import { OasStyle } from '../origin/oas-style';
 
 export interface XBaseParameterObject {
   /**

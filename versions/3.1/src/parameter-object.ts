@@ -239,5 +239,5 @@ export class ParameterObject extends BaseParameterObject {
    * The location of the parameter. Possible values are `"query"`, `"header"`, `"path"`
    * or `"cookie"`.
    */
-  in: string;
+  in: 'query' | 'header' | 'path' | 'cookie';
 }

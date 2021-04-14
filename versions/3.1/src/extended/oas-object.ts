@@ -24,7 +24,7 @@ export type XOasObject<T extends SpecExtFieldPattern = any> = SpecificationExten
    * string.
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#versions
-   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#info-version
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#infoVersion
    */
   openapi: string;
   /**

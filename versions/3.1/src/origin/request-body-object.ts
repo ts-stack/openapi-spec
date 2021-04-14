@@ -139,7 +139,7 @@ export interface RequestBodyObject {
    * 
    * [1]: https://tools.ietf.org/html/rfc7231#appendix-D
    */
-  content: { [contentName: string]: MediaTypeObject };
+  content: { [mediaTypeName: string]: MediaTypeObject };
   /**
    * Determines if the request body is required in the request. Defaults to `false`.
    */

@@ -140,7 +140,7 @@ export type XRequestBodyObject<T extends SpecExtFieldPattern = any> = Specificat
    * 
    * [1]: https://tools.ietf.org/html/rfc7231#appendix-D
    */
-  content: { [contentName: string]: XMediaTypeObject };
+  content: { [mediaTypeName: string]: XMediaTypeObject };
   /**
    * Determines if the request body is required in the request. Defaults to `false`.
    */

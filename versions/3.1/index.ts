@@ -1,3 +1,13 @@
+/**
+ * This string is the [version number][1] of the [OpenAPI Specification version][1]
+ * that the OpenAPI document uses. The `openapi` field SHOULD be used by tooling specifications and
+ * clients to interpret the OpenAPI document. This is _not_ related to the API [info.version][3]
+ * string.
+ *
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#versions
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#infoVersion
+ */
+export const openapi = '3.1.0';
 export * from './src/origin/base-parameter-object';
 export * from './src/origin/callback-object';
 export * from './src/origin/components-object';

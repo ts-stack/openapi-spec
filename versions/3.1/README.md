@@ -8,7 +8,7 @@ but the patch version is not the same:
 
 | OpenAPI Specification   | @ts-stack/openapi-spec |
 |-------------------------|-------------------------|
-| v3.1.0                  | <ul><li>v3.1.0</li></ul> |
+| v3.1.0                  | <ul><li>v3.1.0</li><li>v3.1.1</li></ul> |
 
 
 ## Introduction
@@ -30,6 +30,16 @@ npm i @ts-stack/openapi-spec
 ```
 
 [1]: https://github.com/OAI/OpenAPI-Specification
+
+## openapi version usage
+
+You can use the `openapi` constant that contains the version of the OpenAPI Specification:
+
+```ts
+import { openapi } from '@ts-stack/openapi-spec';
+
+console.log(openapi) // 3.1.0
+```
 
 ## SpecificationExtension Usage
 

@@ -1,5 +1,12 @@
+<a name="3.1.2"></a>
+# [3.1.2](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.2) (2021-04-15)
+
+### Bug Fixes
+
+- Moved `index.ts` to `src`.
+
 <a name="3.1.1"></a>
-# [3.1.1](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.1) (2021-03-26)
+## [3.1.1](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.1) (2021-03-26)
 
 ### Features
 

@@ -1,4 +1,4 @@
-import { XOasObject } from '..';
+import { XOasObject } from '../src';
 
 const oasObject: XOasObject = {
   openapi: '3.0.1',

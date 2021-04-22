@@ -1,3 +1,4 @@
+import { DiscriminatorObject } from '../origin/discriminator-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
@@ -144,13 +145,4 @@ components:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export type XDiscriminatorObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
-  /**
-   * The name of the property in the payload that will hold the discriminator value.
-   */
-  propertyName: string;
-  /**
-   * An object to hold mappings between payload values and schema names or references.
-   */
-  mapping?: { [mapName: string]: string };
-}
+export type XDiscriminatorObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & DiscriminatorObject;

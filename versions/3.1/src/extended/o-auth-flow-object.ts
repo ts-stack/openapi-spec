@@ -1,3 +1,4 @@
+import { OAuthFlowObject } from '../origin/o-auth-flow-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
@@ -50,33 +51,4 @@ flows:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export type XOAuthFlowObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
-  /**
-   * Applies To `oauth2` (`"implicit"`, `"authorizationCode"`).
-   *
-   * The authorization URL to be used for this flow. This MUST be in the form of a URL.
-   * The OAuth2 standard requires the use of TLS.
-   */
-  authorizationUrl: string;
-  /**
-   * Applies To `oauth2` (`"password"`, `"clientCredentials"`, `"authorizationCode"`).
-   *
-   * The token URL to be used for this flow. This MUST be in the form of a URL.
-   * The OAuth2 standard requires the use of TLS.
-   */
-  tokenUrl: string;
-  /**
-   * Applies To `oauth2`.
-   * 
-   * The URL to be used for obtaining refresh tokens. This MUST be in the form of a URL.
-   * The OAuth2 standard requires the use of TLS.
-   */
-  refreshUrl?: string;
-  /**
-   * Applies To `oauth2`.
-   *
-   * The available scopes for the OAuth2 security scheme. A map between the scope name
-   * and a short description for it. The map MAY be empty.
-   */
-  scopes: { [scopeName: string]: string };
-}
+export type XOAuthFlowObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & OAuthFlowObject;

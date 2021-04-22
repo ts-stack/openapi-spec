@@ -3,6 +3,7 @@ import { XEncodingObject } from './encoding-object';
 import { XExampleObject } from './example-object';
 import { ReferenceObject } from '../origin/reference-object';
 import { XSchemaObject } from './schema-object';
+import { MediaTypeObject } from '../origin/media-type-object';
 
 /**
  * Each Media Type Object provides schema and examples for the media type identified by its key.
@@ -265,29 +266,10 @@ An `encoding` attribute is introduced to give you control over the serialization
  * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingStyle
  * [7]: https://tools.ietf.org/html/rfc7578
  */
-export type XMediaTypeObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
-  /**
-   * The schema defining the content of the request, response, or parameter.
-   */
+export type XMediaTypeObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & XMediaTypeObjectBasic;
+
+interface XMediaTypeObjectBasic extends MediaTypeObject {
   schema?: XSchemaObject;
-  /**
-   * Example of the media type.  The example object SHOULD be in the correct format as specified
-   * by the media type.  The `example` field is mutually exclusive of the `examples` field.
-   * Furthermore, if referencing a `schema` which contains an example, the `example` value
-   * SHALL _override_ the example provided by the schema.
-   */
-  example?: any;
-  /**
-   * Examples of the media type.  Each example object SHOULD  match the media type and specified
-   * schema if present.  The `examples` field is mutually exclusive of the `example` field.
-   * Furthermore, if referencing a `schema` which contains an example, the `examples` value
-   * SHALL _override_ the example provided by the schema.
-   */
   examples?: { [exampleName: string]: XExampleObject | ReferenceObject };
-  /**
-   * A map between a property name and its encoding information. The key, being the property name,
-   * MUST exist in the schema as a property. The encoding object SHALL only apply to `requestBody`
-   * objects when the media type is `multipart` or `application/x-www-form-urlencoded`.
-   */
   encoding?: { [encodingName: string]: XEncodingObject };
 }

@@ -1,3 +1,4 @@
+import { ExampleObject } from '../origin/example-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
@@ -66,30 +67,4 @@ responses:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export type XExampleObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
-  /**
-   * Short description for the example.
-   */
-  summary?: string;
-  /**
-   * Long description for the example. [CommonMark syntax][1] MAY be used for rich text
-   * representation.
-   * 
-   * [1]: https://spec.commonmark.org/
-   */
-  description?: string;
-  /**
-   * Embedded literal example. The `value` field and `externalValue` field are mutually exclusive.
-   * To represent examples of media types that cannot naturally represented in JSON or YAML, use
-   * a string value to contain the example, escaping where necessary.
-   */
-  value?: any;
-  /**
-   * A URI that points to the literal example. This provides the capability to reference examples
-   * that cannot easily be included in JSON or YAML documents.  The `value` field and
-   * `externalValue` field are mutually exclusive. See the rules for resolving [Relative References][1].
-   * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
-   */
-  externalValue?: string;
-}
+export type XExampleObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & ExampleObject;

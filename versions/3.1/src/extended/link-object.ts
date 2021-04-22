@@ -1,3 +1,4 @@
+import { LinkObject } from '../origin/link-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 import { XServerObject } from './server-object';
 
@@ -120,47 +121,8 @@ links:
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
  */
-export type XLinkObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
-  /**
-   * A relative or absolute URI reference to an OAS operation. This field is mutually exclusive of
-   * the `operationId` field, and MUST point to an [Operation Object][1]. Relative
-   * `operationRef` values MAY be used to locate an existing [Operation Object][1]
-   * in the OpenAPI definition. See the rules for resolving [Relative References][2].
-   * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
-   */
-  operationRef?: string;
-  /**
-   * The name of an _existing_, resolvable OAS operation, as defined with a unique `operationId`.
-   * This field is mutually exclusive of the `operationRef` field.
-   */
-  operationId?: string;
-  /**
-   * A map representing parameters to pass to an operation as specified with `operationId` or
-   * identified via `operationRef`. The key is the parameter name to be used, whereas the value
-   * can be a constant or an expression to be evaluated and passed to the linked operation.
-   * The parameter name can be qualified using the [parameter location][1] `[{in}.]{name}` for
-   * operations that use the same parameter name in different locations (e.g. path.id).
-   * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
-   */
-  parameters?: { [parameterName: string]: any };
-  /**
-   * A literal value or [{expression}][1] to use as a request body when calling the target
-   * operation.
-   * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
-   */
-  requestBody?: { [parameterName: string]: any };
-  /**
-   * A description of the link. [CommonMark syntax][1] MAY be used for rich text representation.
-   * 
-   * [1]: https://spec.commonmark.org/
-   */
-  description?: string;
-  /**
-   * A server object to be used by the target operation.
-   */
+export type XLinkObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & XLinkObjectBasic;
+
+interface XLinkObjectBasic extends LinkObject {
   server?: XServerObject;
 }

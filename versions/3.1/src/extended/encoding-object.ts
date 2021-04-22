@@ -2,6 +2,7 @@ import { XHeaderObject } from './header-object';
 import { OasStyle } from '../origin/oas-style';
 import { ReferenceObject } from '../origin/reference-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
+import { EncodingObject } from '../origin/encoding-object';
 
 /**
  * A single encoding definition applied to a single schema property.
@@ -47,59 +48,8 @@ requestBody:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
  */
-export type XEncodingObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
-  /**
-   * Content-Type for encoding a specific property. Default value depends on the property type:
-   * - for `object` - `application/json`;
-   * - for `array` – the default is defined based on the inner type;
-   * - for all other cases the default is `application/octet-stream`.
-   * 
-   * The value can be a specific media type (e.g. `application/json`), a wildcard media type
-   * (e.g. `image/*`), or a comma-separated list of the two types. 
-   */
-  contentType?: string;
-  /**
-   * A map allowing additional information to be provided as headers, for example
-   * `Content-Disposition`.  `Content-Type` is described separately and SHALL be ignored in this
-   * section. This property SHALL be ignored if the request body media type is not a `multipart`.
-   */
+export type XEncodingObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & IEncodingObjectBasic;
+
+interface IEncodingObjectBasic extends EncodingObject {
   headers?: { [headerName: string]: XHeaderObject | ReferenceObject };
-  /**
-   * Describes how a specific property value will be serialized depending on its type.
-   * See [Parameter Object][1] for details on the [`style`][2] property. The behavior follows the
-   * same values as `query` parameters, including default values. This property SHALL be ignored
-   * if the request body media type is not `application/x-www-form-urlencoded` or
-   * `multipart/form-data`. If a value is explicitly defined, then the value of [`contentType`][3]
-   * (implicit or explicit) SHALL be ignored.
-   * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
-   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingContentType
-   */
-  style?: OasStyle;
-  /**
-   * When this is true, property values of type `array` or `object` generate separate parameters
-   * for each value of the array, or key-value-pair of the map.  For other types of properties this
-   * property has no effect. When [`style`][1] is `form`, the default value is `true`.
-   * For all other styles, the default value is `false`. This property SHALL be ignored if the
-   * request body media type is not `application/x-www-form-urlencoded` or `multipart/form-data`.
-   * If a value is explicitly defined, then the value of [`contentType`][2] (implicit or explicit)
-   * SHALL be ignored.
-   * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingStyle
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingContentType
-   */
-  explode?: boolean;
-  /**
-   * Determines whether the parameter value SHOULD allow reserved characters, as defined by
-   * [RFC3986][1] `:/?#[]@!$&'()*+,;=` to be included without percent-encoding. The default
-   * value is `false`. This property SHALL be ignored if the request body media type is not
-   * `application/x-www-form-urlencoded` or `multipart/form-data`. If a value is explicitly
-   * defined, then the value of [`contentType`][2] (implicit or explicit)
-   * SHALL be ignored.
-   * 
-   * [1]: https://tools.ietf.org/html/rfc3986#section-2.2
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingContentType
-   */
-  allowReserved?: boolean;
 }

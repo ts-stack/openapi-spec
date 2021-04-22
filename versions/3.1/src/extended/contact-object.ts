@@ -1,3 +1,4 @@
+import { ContactObject } from '../origin/contact-object';
 import { SpecExtFieldPattern, SpecificationExtension } from '../origin/specification-extension';
 
 /**
@@ -25,18 +26,4 @@ url: https://www.example.com/support
 email: support@example.com
 ```
  */
-export type XContactObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
-  /**
-   * The identifying name of the contact person/organization.
-   */
-  name?: string;
-  /**
-   * The URL pointing to the contact information. This MUST be in the form of a URL.
-   */
-  url?: string;
-  /**
-   * The email address of the contact person/organization.
-   * This MUST be in the form of an email address.
-   */
-  email?: string;
-}
+export type XContactObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & ContactObject;

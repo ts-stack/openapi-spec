@@ -1012,11 +1012,7 @@ const oasObject: XOasObject = {
     },
     securitySchemes: {
       petstore_auth: {
-        scheme: 'some scheme here',
-        name: 'some name here',
-        in: 'some in here',
         type: 'oauth2',
-        openIdConnectUrl: 'some openIdConnectUrl here',
         flows: {
           implicit: {
             tokenUrl: 'some token url here',
@@ -1029,9 +1025,6 @@ const oasObject: XOasObject = {
         },
       },
       api_key: {
-        scheme: 'some scheme here',
-        flows: {},
-        openIdConnectUrl: 'some openIdConnectUrl here',
         type: 'apiKey',
         name: 'api_key',
         in: 'header',

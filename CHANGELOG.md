@@ -1,3 +1,11 @@
+<a name="3.1.3"></a>
+# [3.1.3](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.3) (2021-04-22)
+
+### Bug Fixes
+
+- Fix `SecuritySchemeObject` definitions ([0ec839b](https://github.com/ts-stack/openapi-spec/commit/0ec839b)).
+- Reduce type definitions ([4eab3bf](https://github.com/ts-stack/openapi-spec/commit/4eab3bf)).
+
 <a name="3.1.2"></a>
 # [3.1.2](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.2) (2021-04-15)
 
@@ -24,4 +32,3 @@
 ### Features
 
 - Added extended interfaces with a prefix `X`.
-

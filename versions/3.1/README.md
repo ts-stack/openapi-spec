@@ -8,7 +8,7 @@ but the patch version is not the same:
 
 | OpenAPI Specification   | @ts-stack/openapi-spec |
 |-------------------------|-------------------------|
-| v3.1.0                  | <ul><li>v3.1.0</li><li>v3.1.1</li><li>v3.1.2</li><li>v3.1.3</li></ul> |
+| v3.1.0                  | <ul><li>v3.1.0</li><li>v3.1.1</li><li>v3.1.2</li><li>v3.1.3</li><li>v3.1.4</li></ul> |
 
 
 ## Introduction
@@ -26,7 +26,7 @@ and many other use cases.
 ## Install
 
 ```bash
-npm i @ts-stack/openapi-spec
+npm i -D @ts-stack/openapi-spec
 ```
 
 [1]: https://github.com/OAI/OpenAPI-Specification

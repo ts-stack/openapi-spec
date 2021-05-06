@@ -1,5 +1,12 @@
+<a name="3.1.4"></a>
+# [3.1.4](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.4) (2021-05-06)
+
+### Bug Fixes
+
+- Fix `SchemeObject` definitions ([df3f7b4](https://github.com/ts-stack/openapi-spec/commit/df3f7b4)).
+
 <a name="3.1.3"></a>
-# [3.1.3](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.3) (2021-04-22)
+## [3.1.3](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.3) (2021-04-22)
 
 ### Bug Fixes
 

@@ -449,7 +449,7 @@ interface XSchemaObjectBasic extends SchemaObject {
   then?: XSchemaObject;
   else?: XSchemaObject;
   dependentSchemas?: { [dependentSchema: string]: XSchemaObject };
-  items?: XSchemaObject | { [item: string]: XSchemaObject };
+  items?: XSchemaObject | XSchemaObject[];
   additionalItems?: XSchemaObject;
   unevaluatedItems?: XSchemaObject;
   contains?: XSchemaObject;

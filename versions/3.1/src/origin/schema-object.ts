@@ -1012,7 +1012,7 @@ export interface SchemaObject {
    * Omitting this keyword has the same assertion behavior as an empty
    * schema.
    */
-  items?: this | { [item: string]: SchemaObject };
+  items?: this | this[];
   /**
    * The value of "additionalItems" MUST be a valid JSON Schema.
    * 

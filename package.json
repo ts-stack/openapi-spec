@@ -1,6 +1,6 @@
 {
-  "name": "@ts-stack/open-api-spec",
-  "version": "3.1.0",
+  "name": "@ts-stack/open-spec",
+  "version": "see version in versions folder",
   "description": "This is TypeScript models of OpenAPI Specification v3.1.0.",
   "main": "dist/index",
   "typings": "dist/index",

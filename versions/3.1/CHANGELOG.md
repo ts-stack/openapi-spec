@@ -1,5 +1,12 @@
+<a name="3.1.5"></a>
+# [3.1.5](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.5) (2022-09-26)
+
+### Bug Fixes
+
+- Fix `scheme.enum` definitions ([a85960daab5](https://github.com/ts-stack/openapi-spec/commit/a85960daab5)).
+
 <a name="3.1.4"></a>
-# [3.1.4](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.4) (2021-05-06)
+## [3.1.4](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.4) (2021-05-06)
 
 ### Bug Fixes
 

@@ -537,7 +537,7 @@ export interface SchemaObject {
    * 
    * Elements in the array might be of any type, including null.
    */
-  enum?: [any, ...any[]];
+  enum?: any[];
   /**
    * The value of this keyword MAY be of any type, including null.
    * 

@@ -8,7 +8,7 @@ but the patch version is not the same:
 
 | OpenAPI Specification   | @ts-stack/openapi-spec |
 |-------------------------|-------------------------|
-| v3.1.0                  | <ul><li>v3.1.0</li><li>v3.1.1</li><li>v3.1.2</li><li>v3.1.3</li><li>v3.1.4</li><li>v3.1.5</li></ul> |
+| v3.1.0                  | <ul><li>v3.1.0</li><li>v3.1.1</li><li>v3.1.2</li><li>v3.1.3</li><li>v3.1.4</li><li>v3.1.5</li><li>v3.1.6</li></ul> |
 
 
 ## Introduction
@@ -29,8 +29,6 @@ and many other use cases.
 npm i -D @ts-stack/openapi-spec
 ```
 
-[1]: https://github.com/OAI/OpenAPI-Specification
-
 ## openapi version usage
 
 You can use the `openapi` constant that contains the version of the OpenAPI Specification:
@@ -49,7 +47,7 @@ If you want to use already extended interfaces, you need to import interfaces wi
 import { XOasObject } from '@ts-stack/openapi-spec';
 
 const extendedOasObject: XOasObject<'x-one' | 'x-two'> = {
-  info: {title: '', version: ''},
+  info: { title: '', version: '' },
   openapi: '',
   'x-one': '',
   'x-two': '',
@@ -64,7 +62,7 @@ import { OasObject, SpecificationExtension } from '@ts-stack/openapi-spec';
 type ExtendedOasObject = OasObject & SpecificationExtension<'x-one' | 'x-two'>;
 
 const extendedOasObject: ExtendedOasObject = {
-  info: {title: '', version: ''},
+  info: { title: '', version: '' },
   openapi: '',
   'x-one': '',
   'x-two': '',
@@ -105,3 +103,6 @@ const paths: StrictDifinedPaths = {
   '/two': {},
 };
 ```
+
+
+[1]: https://github.com/OAI/OpenAPI-Specification

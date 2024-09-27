@@ -1,5 +1,14 @@
+<a name="3.1.6"></a>
+# [3.1.6](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.6) (2024-09-27)
+
+### Bug Fixes
+
+| Commit | Type | Description |
+| -- | -- | -- |
+| [58201a18e6](https://github.com/ditsmod/ditsmod/commit/58201a18e666040f1f4) | fix | fixed ref to github links. |
+
 <a name="3.1.5"></a>
-# [3.1.5](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.5) (2022-09-26)
+## [3.1.5](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.5) (2022-09-26)
 
 ### Bug Fixes
 

@@ -44,7 +44,7 @@ requestBody:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export interface EncodingObject {
   /**
@@ -71,7 +71,7 @@ export interface EncodingObject {
    * `multipart/form-data`. If a value is explicitly defined, then the value of [`contentType`][3]
    * (implicit or explicit) SHALL be ignored.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameter-object
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
    * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingContentType
    */

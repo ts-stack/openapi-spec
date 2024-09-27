@@ -73,9 +73,9 @@ security:
 ```
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsSecuritySchemes
- * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsObject
- * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
- * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#components-object
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#openapi-object
+ * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operation-object
  */
 export interface SecurityRequirementObject {
   /**
@@ -87,7 +87,7 @@ export interface SecurityRequirementObject {
    * but are not otherwise defined or exchanged in-band.
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsSecuritySchemes
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsObject
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#components-object
    */
   [name: string]: string[];
 }

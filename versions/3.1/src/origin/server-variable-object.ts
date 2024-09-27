@@ -3,7 +3,7 @@
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export interface ServerVariableObject {
   /**
@@ -17,7 +17,7 @@ export interface ServerVariableObject {
    * treatment of default values, because in those cases parameter values are optional.
    * If the [`enum`][2] is defined, the value MUST exist in the enum's values.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schema-object
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverVariableEnum
    */
   default: string;

@@ -31,7 +31,7 @@ schema:
   type: integer
 ```
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameter-object
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
  */
 export interface HeaderObject extends BaseParameterObject {

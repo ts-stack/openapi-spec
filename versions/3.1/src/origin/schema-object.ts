@@ -42,10 +42,10 @@ export type SchemaObjectType = 'null' | 'boolean' | 'object' | 'array' | 'number
  * 
 Field Name | Type | Description
 ---|:---:|---
-<a name="schemaDiscriminator"></a>discriminator | [Discriminator Object][6] | Adds support for polymorphism. The discriminator is an object name that is used to differentiate between other schemas which may satisfy the payload description. See [Composition and Inheritance](#schemaComposition) for more details.
+<a name="schemaDiscriminator"></a>discriminator | [Discriminator Object][6] | Adds support for polymorphism. The discriminator is an object name that is used to differentiate between other schemas which may satisfy the payload description. See [Composition and Inheritance][14] for more details.
 <a name="schemaXml"></a>xml | [XML Object][7] | This MAY be used only on properties schemas. It has no effect on root schemas. Adds additional metadata to describe the XML representation of this property.
 <a name="schemaExternalDocs"></a>externalDocs | [External Documentation Object][8] | Additional external documentation for this schema.
-<a name="schemaExample"></a>example | Any | A free-form property to include an example of an instance for this schema. To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary.<br><br>**Deprecated:** The `example` property has been deprecated in favor of the JSON Schema `examples` keyword. Use of `example` is discouraged, and later versions of this specification may remove it.
+<a name="schemaExample"></a>example | Any | A free-form property to include an example of an instance for this schema. To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary.<br><br> **Deprecated:** The `example` property has been deprecated in favor of the JSON Schema `examples` keyword. Use of `example` is discouraged, and later versions of this specification may remove it.
  * 
  * ### <a name="schemaComposition"></a>Composition and Inheritance (Polymorphism)
  * 
@@ -78,7 +78,7 @@ Field Name | Type | Description
  * The `$schema` keyword MAY be present in any root Schema Object, and if present MUST be used to
  * determine which dialect should be used when processing the schema. This allows use of Schema
  * Objects which comply with other drafts of JSON Schema than the default Draft 2020-12 support.
- * Tooling MUST support the <a href="#dialectSchemaId">OAS dialect schema id</a>, and MAY support
+ * Tooling MUST support the <a href="https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dialectSchemaId">OAS dialect schema id</a>, and MAY support
  * additional values of `$schema`.
  * 
  * To allow use of a different default `$schema` value for all Schema Objects contained within an
@@ -427,14 +427,15 @@ components:
  * [3]: https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00
  * [4]: https://spec.commonmark.org/
  * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#dataTypeFormat
- * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#discriminatorObject
- * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#xmlObject
- * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#externalDocumentationObject
+ * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#discriminator-object
+ * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#xml-object
+ * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#external-documentation-object
  * [9]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaXml
- * [10]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#baseVocabulary
+ * [10]: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#fixed-fields-20
  * [11]: https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-8
- * [12]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasObject
+ * [12]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#openapi-object
  * [13]: https://tools.ietf.org/html/draft-bhutton-json-schema-00#section-8.1.1
+ * [14]: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#composition-and-inheritance-polymorphism
  */
 export interface SchemaObject {
   /**
@@ -1224,7 +1225,7 @@ export interface SchemaObject {
    * differentiate between other schemas which may satisfy the payload description. See
    * [Composition and Inheritance][1] for more details.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaComposition
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#composition-and-inheritance-polymorphism
    */
   discriminator?: DiscriminatorObject;
   /**

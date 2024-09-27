@@ -66,14 +66,14 @@ default:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export type ResponsesObject = HttpStatusCodesObject & {
   /**
    * The documentation of responses other than the ones declared for specific HTTP response codes.
    * Use this field to cover undeclared responses.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#reference-object
    */
   default?: ResponseObject | ReferenceObject;
 };
@@ -89,8 +89,8 @@ export type HttpStatusCodesObject = {
    * a response is defined using an explicit code, the explicit code definition takes precedence
    * over the range definition for that code.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#httpCodes
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#http-status-codes
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#reference-object
    * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsResponses
    */
   [P in HttpStatusCode]?: ResponseObject | ReferenceObject;

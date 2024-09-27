@@ -207,67 +207,67 @@ components:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export interface ComponentsObject {
   /**
    * An object to hold reusable [Schema Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schema-object
    */
   schemas?: { [schemaName: string]: SchemaObject };
   /**
    * An object to hold reusable [Response Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#responseObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#response-object
    */
   responses?: { [responseName: string]: ResponseObject | ReferenceObject };
   /**
    * An object to hold reusable [Parameter Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameter-object
    */
   parameters?: { [parameterName: string]: ParameterObject | ReferenceObject };
   /**
-   * An object to hold reusable [Example Objects](#exampleObject).
+   * An object to hold reusable [Example Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#exampleObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#example-object
    */
   examples?: { [exampleName: string]: ExampleObject | ReferenceObject };
   /**
    * An object to hold reusable [Request Body Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#requestBodyObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#request-body-object
    */
   requestBodies?: { [requestBodyName: string]: RequestBodyObject | ReferenceObject };
   /**
    * An object to hold reusable [Header Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#headerObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#header-object
    */
   headers?: { [headerBodyName: string]: HeaderObject | ReferenceObject };
   /**
    * An object to hold reusable [Security Scheme Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securitySchemeObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#security-scheme-object
    */
   securitySchemes?: { [securitySchemeName: string]: SecuritySchemeObject | ReferenceObject };
   /**
    * An object to hold reusable [Link Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#linkObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#link-object
    */
   links?: { [linkName: string]: LinkObject | ReferenceObject };
   /**
    * An object to hold reusable [Callback Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callbackObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callback-object
    */
   callbacks?: { [callbackName: string]: CallbackObject | ReferenceObject };
   /**
    * An object to hold reusable [Path Item Object][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#path-item-object
    */
   pathItems?: { [pathItemName: string]: PathItemObject | ReferenceObject };
 }

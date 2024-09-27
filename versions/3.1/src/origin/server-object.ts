@@ -5,7 +5,7 @@ import { ServerVariableObject } from './server-variable-object';
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  * 
  * A single server would be described as:
  * 
@@ -26,7 +26,7 @@ import { ServerVariableObject } from './server-variable-object';
  ```
  * 
  * The following shows how multiple servers can be described, for example, at the
- * OpenAPI Object's [`servers`](#oasServers):
+ * OpenAPI Object's [`servers`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#oasServers):
  * 
  * - example with JSON
  * 

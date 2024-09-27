@@ -52,9 +52,9 @@ $ref: Pet.yaml
 $ref: definitions.yaml#/Pet
 ```
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schemaObject
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#schema-object
  * [2]: https://tools.ietf.org/html/rfc3986
- * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#relative-references-in-uris
  */
 export interface ReferenceObject {
   /**

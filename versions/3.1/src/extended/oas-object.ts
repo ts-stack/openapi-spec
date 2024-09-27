@@ -14,7 +14,7 @@ import { XTagObject } from './tag-object';
  *
  * This object MAY be extended with [Specification Extensions][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export type XOasObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
@@ -36,7 +36,7 @@ export type XOasObject<T extends SpecExtFieldPattern = any> = SpecificationExten
    * the `servers` property is not provided, or is an empty array, the default value would be
    * a [Server Object][1] with a [url][2] value of `/`.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#server-object
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverUrl
    */
   servers?: XServerObject[];
@@ -73,7 +73,7 @@ export type XOasObject<T extends SpecExtFieldPattern = any> = SpecificationExten
    * [Operation Object][1] must be declared. The tags that are not declared MAY
    * be organized randomly or based on the tools' logic. Each tag name in the list MUST be unique.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operation-object
    */
   tags?: XTagObject[];
   externalDocs?: XExternalDocumentationObject;

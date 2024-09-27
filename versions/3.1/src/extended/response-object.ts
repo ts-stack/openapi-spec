@@ -150,7 +150,7 @@ description: object created
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export type XResponseObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**
@@ -179,7 +179,7 @@ export type XResponseObject<T extends SpecExtFieldPattern = any> = Specification
    * a short name for the link, following the naming constraints of the names for
    * [Component Objects][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#components-object
    */
   links?: { [linkName: string]: XLinkObject | ReferenceObject };
 }

@@ -126,7 +126,7 @@ security:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export interface OperationObject {
   /**
@@ -166,7 +166,7 @@ export interface OperationObject {
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemParameters
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterName
    * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
-   * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#referenceObject
+   * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#reference-object
    * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#componentsParameters
    */
   parameters?: (ParameterObject | ReferenceObject)[];
@@ -191,7 +191,7 @@ export interface OperationObject {
    * identifier for the Callback Object. Each value in the map is a [Callback Object][1]
    * that describes a request that may be initiated by the API provider and the expected responses.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callbackObject
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#callback-object
    */
   callbacks?: { [callbackName: string]: CallbackObject | ReferenceObject };
   /**

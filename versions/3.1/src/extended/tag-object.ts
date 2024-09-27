@@ -22,8 +22,8 @@ description: Pets operations
  * 
  * This object MAY be extended with [Specification Extensions][2].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operationObject
- * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#operation-object
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export type XTagObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {
   /**

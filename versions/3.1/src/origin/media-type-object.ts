@@ -256,10 +256,10 @@ An `encoding` attribute is introduced to give you control over the serialization
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  * [2]: https://tools.ietf.org/html/rfc4648
  * [3]: https://tools.ietf.org/html/rfc2045#section-6.7
- * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingObject
+ * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encoding-object
  * [5]: https://tools.ietf.org/html/rfc1866
  * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#encodingStyle
  * [7]: https://tools.ietf.org/html/rfc7578

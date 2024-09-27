@@ -211,12 +211,12 @@ content:
  * 
  * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterName
  * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
- * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#path-templating
  * [4]: https://tools.ietf.org/html/rfc7230#page-22
  * [5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterSchema
  * [6]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterStyle
  * [7]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterContent
- * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [8]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export interface ParameterObject extends BaseParameterObject {
   /**
@@ -231,8 +231,8 @@ export interface ParameterObject extends BaseParameterObject {
    * 
    * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#parameterIn
    * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathsPath
-   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathsObject
-   * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
+   * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#paths-object
+   * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#path-templating
    */
   name: string;
   /**

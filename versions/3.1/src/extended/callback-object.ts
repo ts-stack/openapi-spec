@@ -97,10 +97,10 @@ transactionCallback:
  * 
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
- * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathItemObject
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#path-item-object
  * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#oasWebhooks
- * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtimeExpression
+ * [4]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#runtime-expressions
  * [5]: https://tools.ietf.org/html/rfc6901
  */
 export type XCallbackObject<T extends SpecExtFieldPattern = any> = SpecificationExtension<T> & {

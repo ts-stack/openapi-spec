@@ -62,7 +62,7 @@ responses:
 ```
  * This object MAY be extended with [Specification Extensions][1].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export interface ExampleObject {
   /**
@@ -87,7 +87,7 @@ export interface ExampleObject {
    * that cannot easily be included in JSON or YAML documents.  The `value` field and
    * `externalValue` field are mutually exclusive. See the rules for resolving [Relative References][1].
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#relativeReferencesURI
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#relative-references-in-uris
    */
   externalValue?: string;
 }

@@ -74,9 +74,9 @@ import { PathItemObject } from './path-item-object';
  * 
  * This object MAY be extended with [Specification Extensions][3].
  * 
- * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
- * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#securityFiltering
- * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specificationExtensions
+ * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#server-object
+ * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#security-filtering
+ * [3]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#specification-extensions
  */
 export type PathsObject<T extends PathFieldPattern = any> = {
   /**
@@ -88,8 +88,8 @@ export type PathsObject<T extends PathFieldPattern = any> = {
    * hierarchy but different templated names MUST NOT exist as they are identical. In case of
    * ambiguous matching, it's up to the tooling to decide which one to use.
    * 
-   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#serverObject
-   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#pathTemplating
+   * [1]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#server-object
+   * [2]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md#path-templating
    */
   [P in T]: PathItemObject;
 };

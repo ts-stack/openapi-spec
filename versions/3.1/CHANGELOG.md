@@ -5,7 +5,7 @@
 
 | Commit | Type | Description |
 | -- | -- | -- |
-| [58201a18e6](https://github.com/ditsmod/ditsmod/commit/58201a18e666040f1f4) | fix | fixed ref to github links. |
+| [58201a18e6](https://github.com/ts-stack/openapi-spec/commit/58201a18e666040f1f4) | fix | fixed ref to github links. |
 
 <a name="3.1.5"></a>
 ## [3.1.5](https://github.com/ts-stack/openapi-spec/releases/tag/3.1.5) (2022-09-26)

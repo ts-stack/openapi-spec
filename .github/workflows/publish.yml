@@ -1,0 +1,38 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - '*'
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    environment:
+      name: publishing
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Enable Corepack
+        run: |
+          corepack enable
+          corepack install
+
+      - name: Run scripts
+        run: |
+          cd versions/3.1
+          yarn install --immutable
+          yarn build
+          npm publish --provenance --access public
